@@ -1,0 +1,6 @@
+<view bindtap="{{config&&config.partner.is_vip?'':'go'}}" class="container" data-url="/pages/webPages/webPages?src=https://www.richwo.com/x/#lix_wx">
+    <image class="f-logo" lazyLoad="false" mode="aspectFit" src="{{logoObj.logo}}" wx:if="{{logoObj.logo}}"></image>
+    <image class="h-logo" mode="aspectFit" src="{{logoObj.copyright_logo}}" wx:if="{{logoObj.copyright_logo}}"></image>
+    <image class="h-logo" mode="aspectFit" src="/icons/lix.svg"></image>
+    <view class="h-text">{{config.ilank.copyright_text||'网站设计：瑞奇传媒'}}</view>
+</view>

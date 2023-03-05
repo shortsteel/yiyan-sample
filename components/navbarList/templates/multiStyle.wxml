@@ -1,0 +1,19 @@
+<view class="multiStyle">
+    <view class="multi-header">
+        <van-tabs active="{{activeIndex}}" bind:click="changeActive" border="{{false}}" color="{{themeColor.primaryColor}}" customClass="multi-tabs" navClass="multi-nav">
+            <van-tab title="{{item.text}}" wx:for="{{navbarListData}}" wx:key="item"></van-tab>
+        </van-tabs>
+        <div bindtap="onShowPopup" class="multi-popup">
+            <van-icon customClass="{{isShowPopup?'arrow':'reverse-arrow'}}" name="arrow-up"></van-icon>
+        </div>
+    </view>
+    <van-popup bind:close="onShowPopup" customStyle="top: 44px" overlayStyle="top: 44px" position="top" show="{{isShowPopup}}">
+        <view class="popup-box">
+            <view bind:tap="changeActive" class="item {{activeIndex===index?'active':''}}" data-index="{{index}}" style="background-color: {{activeIndex===index?themeColor.primaryColor:'#f1f1f1'}}; color: {{activeIndex===index?'#ffffff':''}}" wx:for="{{navbarListData}}" wx:key="item">{{item.text}}</view>
+            <text class="i"></text>
+            <text class="i"></text>
+            <text class="i"></text>
+            <text class="i"></text>
+        </view>
+    </van-popup>
+</view>

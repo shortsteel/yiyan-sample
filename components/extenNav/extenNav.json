@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "companyContact": "./../companyContact/companyContact",
+        "myModal": "./../myModal/myModal"
+    }
+}

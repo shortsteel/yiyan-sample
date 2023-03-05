@@ -1,0 +1,4 @@
+<view class="cartStyle" style="top: {{top}}; position: {{position}}" wx:if="{{navbarListData.length>1}}">
+    <view bind:tap="changeActive" class="item {{activeIndex===index?'selected':''}}" data-index="{{index}}" data-value="{{item.value}}" style="{{themeColor.primaryColor?'border-bottom-color:':''}} {{themeColor.primaryColor}}" wx:for="{{navbarListData}}" wx:key="value">{{item.text}}<view class="badge" wx:if="{{item.totalCounts}}">{{item.totalCounts}}</view>
+    </view>
+</view>

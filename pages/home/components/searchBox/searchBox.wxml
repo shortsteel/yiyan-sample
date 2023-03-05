@@ -1,0 +1,11 @@
+<view class="box" style="background-color: {{themeColor.backgroundColor}}">
+    <view class="searchBox" hoverClass="none">
+        <view class="search">
+            <input bindconfirm="runToSearch" bindinput="inputChangeHandle" class="input" placeholder="{{total?'搜索商品，共有'+total+'款好物':'搜索文章'}}" type="text" value="{{value}}"></input>
+        </view>
+    </view>
+    <navigator class="box-right" url="/pages/multiStoreList/multiStoreList" wx:if="{{!onlySearchBox&&config.offline_store_enable}}">
+        <text class="store-name">{{globalData.currentStore&&globalData.currentStore.name||'选择门店'}}</text>
+        <text>></text>
+    </navigator>
+</view>

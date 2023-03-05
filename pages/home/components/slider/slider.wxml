@@ -1,0 +1,18 @@
+<view class="Wrapper {{setting.border_top_radius?'top-radius':''}} {{setting.border_bottom_radius?'bottom-radius':''}}" style="margin-bottom: {{setting.margin}}rpx">
+    <view class="title" style="text-align: {{setting.title_position}}" wx:if="{{setting.title_display}}">{{title}}</view>
+    <view class="slider {{setting.style==='number'?'searchSliders':''}}" wx:if="{{content&&content.length}}">
+        <swiper autoplay circular bindanimationfinish="swiperChange" bindchange="swiperChange" class="banner {{setting.full?'full':''}}" current="swiperCurrent" style="padding-bottom:0;{{setting.full?'':'height:'+setting.height+'rpx'}}">
+            <swiper-item wx:for="{{content}}" wx:key="id">
+                <extenNav eventHandlingWithOuter bind:onCustomService="showContactModal" item="{{item}}">
+                    <image lazyLoad webp class="bannerImg {{index==swiperCurrent?' on':''}}" mode="widthFix" slot="content" src="{{item.image}}"></image>
+                </extenNav>
+            </swiper-item>
+        </swiper>
+        <view class="dots" wx:if="{{setting.style==='number'}}">
+            <view class="dot">{{swiperCurrent+1}} / {{content.length}}</view>
+        </view>
+        <view class="dots2" wx:if="{{setting.style==='disc'}}">
+            <view class="spot {{index==swiperCurrent?' active':''}}" wx:for="{{content}}" wx:key="id"></view>
+        </view>
+    </view>
+</view>

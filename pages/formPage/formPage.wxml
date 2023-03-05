@@ -1,0 +1,4 @@
+<view class="container">
+    <view class="title">{{formData.title}}</view>
+    <markForm bind:submit="submit" form="{{formData.fields}}" onlyShow="{{formData.per_user>0&&formData.times>=formData.per_user||formData.max>0&&formData.count>=formData.max}}" wx:if="{{formData.fields.length}}"></markForm>
+</view>

@@ -1,0 +1,20 @@
+<view class="container">
+    <van-popup bind:close="onClose" customClass="popup-content" customStyle="height: 20%;" position="bottom" show="{{show}}">
+        <view class="box" wx:if="{{showSuccess}}">
+            <van-image customClass="box-img" height="60" src="{{serviceHeadurl}}" width="60"></van-image>
+            <view class="box-ctn">
+                <view class="box-title">客服人员：{{serviceName||'-'}}</view>
+                <view class="box-desc" wx:if="{{hasFrend}}">客服人员已经是您的好友</view>
+                <view class="box-desc" wx:else>邀请通知已发送至您的微信</view>
+            </view>
+        </view>
+        <view class="box" wx:elif="{{showFail}}">
+            <icon class="box-img" size="26" type="warn"></icon>
+            <view class="box-ctn">
+                <view class="box-title">错误提示</view>
+                <view class="box-desc">{{failTip?failTip:'获取客服企业微信失败'}}</view>
+            </view>
+        </view>
+        <block wx:else></block>
+    </van-popup>
+</view>

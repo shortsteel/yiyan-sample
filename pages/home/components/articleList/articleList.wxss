@@ -1,0 +1,359 @@
+.smallPic {
+    box-shadow: 0 0 0 2rpx #111;
+    color: #fff;
+    font-size: 9px;
+    position: relative;
+    width: 375rpx;
+}
+
+.smallPic .card-img {
+    display: block;
+    min-height: 400rpx;
+}
+
+.smallPic:after {
+    background: linear-gradient(0,rgba(0,0,0,.3),transparent);
+    bottom: 0;
+    content: "";
+    height: 100rpx;
+}
+
+.smallPic .hd,.smallPic:after {
+    display: block;
+    position: absolute;
+    width: 100%;
+}
+
+.smallPic .hd {
+    bottom: 20rpx;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    text-shadow: 0 0 8rpx rgba(0,0,0,.3);
+    z-index: 2;
+}
+
+.list-dress .hd {
+    bottom: auto;
+    font-size: 18px;
+    font-weight: 500;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+.list-dress:after {
+    display: none;
+}
+
+.bigPic {
+    margin-bottom: 60rpx;
+    width: 100%;
+}
+
+.bigPic .pic {
+    min-height: 260rpx;
+    width: 750rpx;
+}
+
+.bigPic .t1 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 20rpx 44rpx 10rpx;
+}
+
+.bigPic .t2 {
+    display: none;
+    margin-left: 44rpx;
+}
+
+.bigPic .t3 {
+    border-bottom: 1rpx solid hsla(0,0%,100%,.15);
+    color: hsla(0,0%,100%,.6);
+    font-size: 11px;
+    font-weight: 300;
+    margin: 0 44rpx;
+    padding-bottom: 20rpx;
+}
+
+.bigPic .t2 .v {
+    font-size: 12px;
+    margin-right: 28rpx;
+    opacity: .5;
+}
+
+.bigPic .t2 .van-icon {
+    font-size: 14px;
+    margin-right: 7rpx;
+    top: 6rpx;
+}
+
+.bigPic .views .van-icon {
+    top: 5rpx;
+}
+
+.bigPic .bt {
+    display: flex;
+    margin-top: 30rpx;
+}
+
+.bigPic .bt .tag {
+    color: #003384;
+    font-size: 14px;
+    font-weight: 300;
+    margin-right: 30rpx;
+}
+
+.card-img {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.card-img .iplay {
+    bottom: 40rpx;
+    color: #fff;
+    font-size: 30px;
+    left: 40rpx;
+    position: absolute;
+}
+
+.card-img.img-detail,.card-img.img-top {
+    border-radius: 6rpx 6rpx 0 0;
+}
+
+.card-img.img-related {
+    height: 260rpx;
+}
+
+.card-img .tag {
+    align-items: center;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 60rpx;
+    color: #fff;
+    display: flex;
+    font-size: 11px;
+    height: 50rpx;
+    justify-content: center;
+    letter-spacing: 2rpx;
+    padding: 0 20rpx;
+    position: absolute;
+    right: 40rpx;
+    text-transform: uppercase;
+    top: 40rpx;
+    transition: background-color .2s ease;
+    z-index: 10;
+}
+
+.card-img .content-wrap {
+    background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.8));
+    bottom: 0;
+    color: #fff;
+    padding: 40rpx 50rpx;
+    position: absolute;
+    width: 100%;
+}
+
+.card-img .content-wrap .author {
+    align-items: center;
+    display: flex;
+    margin-bottom: 30rpx;
+}
+
+.card-img .content-wrap .author.author-related {
+    margin: 0;
+}
+
+.card-img .content-wrap .author .avatar {
+    border-radius: 8rpx;
+    height: 70rpx;
+    margin-right: 20rpx;
+    width: 70rpx;
+}
+
+.card-img .content-wrap .author .right {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.card-img .content-wrap .author .right .nickname {
+    font-weight: 700;
+}
+
+.content {
+    font-size: 14px;
+}
+
+.content.content-detail {
+    font-size: 18px;
+}
+
+.content.content-related {
+    margin: 30rpx 0 20rpx;
+}
+
+.summary-wrapper {
+    background: #fff;
+    border-radius: 0 0 6rpx 6rpx;
+    padding: 50rpx;
+}
+
+.summary-wrapper .summary-block {
+    height: 140rpx;
+    margin-bottom: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.summary-wrapper .summary-block .summary-gradient {
+    background-image: linear-gradient(180deg,hsla(0,0%,100%,0),#fff 86%);
+    bottom: 0;
+    height: 140rpx;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+
+.summary-wrapper .summary-block .summary-paragraph {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: #596172;
+    display: -webkit-box;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.summary-wrapper .more {
+    color: #333;
+    font-size: 16px;
+}
+
+.section {
+    overflow: hidden;
+}
+
+.section .sectionTitle {
+    font-size: 18px;
+    margin: 30rpx 40rpx 40rpx;
+}
+
+.section .sectionTitle .hd_ico {
+    height: 50rpx;
+    margin-right: 10rpx;
+    width: 50rpx;
+}
+
+.section .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.per_2_h .content,.per_3_h .content {
+    flex-flow: nowrap;
+    margin: 0;
+    overflow-x: scroll;
+    padding-left: 40rpx;
+}
+
+.per_2_h .content::-webkit-scrollbar,.per_3_h .content::-webkit-scrollbar {
+    display: none;
+}
+
+.per_2_h .content navigator:last-child,.per_3_h .content navigator:last-child {
+    padding-right: 40rpx;
+}
+
+.per_2_h .content .smallPic {
+    width: 325rpx;
+}
+
+.per_3_h .content .smallPic {
+    width: 215rpx;
+}
+
+.per_3_h .content .smallPic .card-img {
+    min-height: 250rpx;
+}
+
+.per_3_h .content .smallPic .hd {
+    font-size: 12px;
+}
+
+.section .sectionMore {
+    align-items: center;
+    background: hsla(0,0%,100%,.05);
+    border-radius: 10rpx;
+    display: flex;
+    height: 80rpx;
+    justify-content: center;
+    margin: 60rpx auto 0;
+    width: 250rpx;
+}
+
+.section .sectionMore .moreButton {
+    font-size: 14px;
+    opacity: .8;
+}
+
+.section .sectionMore .moreButton .x_more {
+    animation: heart 1s ease-in-out 2.7s infinite alternate,wx 2s 6s infinite;
+    bottom: 4rpx;
+    left: 17rpx;
+    position: relative;
+}
+
+@-webkit-keyframes heart {
+    from {
+        transform: translate(0,0);
+    }
+
+    to {
+        transform: translate(-10rpx,0);
+    }
+}
+
+@keyframes heart {
+    from {
+        transform: translate(0,0);
+    }
+
+    to {
+        transform: translate(-10rpx,0);
+    }
+}
+
+@-webkit-keyframes wx {
+    25% {
+        opacity: .3;
+    }
+}
+
+@keyframes wx {
+    25% {
+        opacity: .3;
+    }
+}
+
+.section .sectionMore .rightIcon {
+    height: 20rpx;
+    margin-left: 10rpx;
+    width: 20rpx;
+}
+
+.top-radius {
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.bottom-radius {
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}

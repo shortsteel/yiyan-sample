@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "van-loading": "./../../../@vant/weapp/dist/loading/index",
+        "articleCard": "./../../../components/articleCard/articleCard"
+    }
+}

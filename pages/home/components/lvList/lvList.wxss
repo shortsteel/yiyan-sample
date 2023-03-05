@@ -1,0 +1,90 @@
+.Wrapper {
+    overflow: hidden;
+}
+
+.Wrapper .title {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 26rpx 25rpx 0;
+    text-align: center;
+}
+
+.Wrapper .live-list {
+    padding: 6rpx 26rpx;
+}
+
+.Wrapper .live-list .live-wrap {
+    border-bottom: 1rpx solid #f5f5f5;
+    display: flex;
+    padding: 20rpx 0;
+}
+
+.Wrapper .live-list .live-wrap.live-wrap:last-child {
+    border: none;
+}
+
+.Wrapper .live-list .live-wrap .live-left {
+    height: 200rpx;
+    margin-right: 32rpx;
+    width: 300rpx;
+}
+
+.Wrapper .live-list .live-wrap .live-left .live-img {
+    background-color: #d8d8d8;
+    border-radius: 10rpx;
+    height: 100%;
+    width: 100%;
+}
+
+.Wrapper .live-list .live-wrap .live-right {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.Wrapper .live-list .live-wrap .live-right .live-title {
+    color: #333;
+    font-size: 12px;
+    margin-bottom: 10rpx;
+}
+
+.Wrapper .live-list .live-wrap .live-right .live-content {
+    color: #999;
+    font-size: 20rpx;
+    line-height: 32rpx;
+}
+
+.Wrapper .live-list .live-wrap .live-right .live-btn-wrap {
+    color: #729153;
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    line-height: 50rpx;
+    margin-top: auto;
+}
+
+.Wrapper .live-list .live-wrap .live-right .live-btn-wrap .live-btn {
+    border-radius: 25rpx;
+    color: #fff;
+    font-size: 12px;
+    line-height: 50rpx;
+    width: 160rpx;
+}
+
+.Wrapper .empty {
+    align-items: center;
+    color: #a9a9a9;
+    display: flex;
+    height: 200rpx;
+    justify-content: center;
+}
+
+.top-radius {
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.bottom-radius {
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}

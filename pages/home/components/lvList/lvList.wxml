@@ -1,0 +1,32 @@
+<view class="Wrapper {{setting.border_top_radius?'top-radius':''}} {{setting.border_bottom_radius?'bottom-radius':''}}" style="margin-bottom: {{setting.margin}}rpx">
+    <view class="title" style="text-align: {{setting.title_position}}" wx:if="{{setting.title_display}}">{{title}}</view>
+    <view class="live-list" wx:if="{{content&&content.length>0}}">
+        <view bind:tap="onClickBtn" class="live-wrap" data-id="{{item.id}}" data-status="{{item.status}}" wx:for="{{content}}" wx:key="index">
+            <view class="live-left">
+                <image class="live-img" mode="aspectFill" src="{{item.share_img}}"></image>
+            </view>
+            <view class="live-right">
+                <view class="live-title">{{item.name||'-'}}</view>
+                <view class="live-content">
+                    <view class="live-line">
+                        <text>开播</text>
+                        <text>{{item.start_time||'-'}}</text>
+                    </view>
+                    <view class="live-line">
+                        <text>结束</text>
+                        <text>{{item.end_time||'-'}}</text>
+                    </view>
+                    <view class="live-line">
+                        <text>播主：</text>
+                        <text>{{item.anchor_name||'-'}}</text>
+                    </view>
+                </view>
+                <view class="live-btn-wrap" style="color: {{themeColor.primaryColor}}">
+                    <text>{{lvStatusText[item.status]}}</text>
+                    <button class="live-btn" style="background-color: {{themeColor.primaryColor}}">{{lvBtnText[item.status]}}</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="empty" wx:else>暂无直播数据</view>
+</view>

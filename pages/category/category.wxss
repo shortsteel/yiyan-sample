@@ -1,0 +1,47 @@
+.container .hd_pic {
+    display: block;
+}
+
+.container .search_wrap {
+    backdrop-filter: saturate(180%) blur(20rpx);
+    background: linear-gradient(180deg,#111,hsla(0,0%,7%,.8));
+    box-sizing: border-box;
+    left: 0;
+    position: fixed;
+    top: -1rpx;
+    width: 100%;
+    z-index: 999;
+}
+
+.container .search_wrap .search {
+    align-items: center;
+    background: hsla(0,0%,100%,.1);
+    border-radius: 10rpx;
+    display: flex;
+    height: 70rpx;
+    justify-content: center;
+    margin: 15rpx 30rpx;
+}
+
+.container .search_wrap .search .bar-center-icon {
+    font-size: 40rpx;
+    height: 30rpx;
+    opacity: .5;
+}
+
+.container .search_wrap .search .text {
+    font-size: 14px;
+    opacity: .6;
+    padding-right: 10rpx;
+}
+
+.container .category_wrap {
+    margin-top: 100rpx;
+    padding-bottom: 20rpx;
+}
+
+.category .pic {
+    display: block;
+    margin: 0 auto 40rpx;
+    min-height: 300rpx;
+}

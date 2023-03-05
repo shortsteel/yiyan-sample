@@ -1,0 +1,102 @@
+<view class="container">
+    <view bind:tap="goPage" class="header" data-item="{{post}}" hoverClass="hover">
+        <van-image customClass="banner" fit="widthFix" showLoading="{{false}}" src="{{post.pic2||post.thumbnail}}" width="750rpx"></van-image>
+        <view class="bottom">
+            <van-icon classPrefix="van-icon" customClass="bar-icon" name="arrow-left" slot="icon"></van-icon>
+            <view class="title">{{post.title}}</view>
+        </view>
+    </view>
+    <view class="content-box">
+        <van-divider class="comments_title" contentPosition="center" textColor="" wx:if="{{comments&&comments.length}}">
+            <text class="hd">全部评论</text>
+            <text class="cont">{{WXS.ellipsisValue(post.comment_count,4)}}条</text>
+        </van-divider>
+        <view class="comments" wx:if="{{comments&&comments.length}}">
+            <view class="item" wx:for="{{comments}}" wx:key="id">
+                <image class="avatar" src="{{item.author.avatar}}"></image>
+                <view class="right">
+                    <view class="meta">
+                        <view class="header">
+                            <view class="sticky" wx:if="{{item.is_sticky}}">
+                                <van-icon classPrefix="sweet" color="#ff8140" name="sticky" size="30rpx" slot="icon"></van-icon>
+                                <text>置顶</text>
+                            </view>
+                            <view class="nickname">{{item.author.nickname||'热心网友'}}</view>
+                        </view>
+                        <view bind:tap="onDiggComment" class="digg-box" data-comment-id="{{item.id}}" data-index="{{index}}" data-is-digged="{{item.is_digged}}" wx:if="{{post.comment_digg}}">
+                            <van-icon classPrefix="van-icon" color="{{item.is_digged?'#ff2c55':'#dcdddd'}}" name="{{item.is_digged?'like':'like'}}" size="40rpx" slot="icon"></van-icon>
+                            <view class="text" style="color:{{item.is_digged?'#ff2c55':'#999'}}" wx:if="{{item.digg_count}}"> {{WXS.ellipsisValue(item.digg_count,7)}}</view>
+                        </view>
+                    </view>
+                    <view class="options">
+                        <view class="time">{{WXS.formatTime(item.timestamp*1000)}}</view>
+                        <view catch:tap="onReply" class="replyBt" data-reply-parent-id="{{item.id}}" data-reply-user="{{item.author.nickname||'热心网友'}}" wx:if="{{post.reply_type==='all'}}">回复</view>
+                    </view>
+                    <view class="content">
+                        <text class="text" style="margin-right: 10rpx" wx:if="{{item.reply_to&&item.parent}}">@{{item.reply_to}}</text>
+                        <text decode selectable class="text">{{item.content}}</text>
+                        <view class="text approved" wx:if="{{!item.approved}}">您的评论正在审核中...</view>
+                    </view>
+                    <view class="replies" wx:if="{{item.children&&item.children.length}}">
+                        <view class="item" wx:for="{{item.children}}" wx:for-index="childIndex" wx:for-item="child" wx:key="id">
+                            <image class="avatar" src="{{child.author.avatar}}" wx:if="{{post.reply_type!=='admin_reply'}}"></image>
+                            <view class="right">
+                                <view class="meta">
+                                    <view class="nickname {{post.reply_type==='admin_reply'?'admin':''}}">{{post.reply_type==='admin_reply'?'作者':child.author.nickname||'热心网友'}}</view>
+                                    <view bind:tap="onDiggComment" class="digg-box" data-child-index="{{childIndex}}" data-comment-id="{{child.id}}" data-index="{{index}}" data-is-digged="{{child.is_digged}}" wx:if="{{post.comment_digg}}">
+                                        <van-icon classPrefix="van-icon" color="{{child.is_digged?'#ff2c55':'#dcdddd'}}" name="{{child.is_digged?'like':'like'}}" size="40rpx" slot="icon"></van-icon>
+                                        <view class="text" style="color:{{child.is_digged?'#ff2c55':'#999'}}" wx:if="{{child.digg_count}}"> {{WXS.ellipsisValue(child.digg_count,7)}} </view>
+                                    </view>
+                                </view>
+                                <view class="options">
+                                    <view class="time">{{WXS.formatTime(child.timestamp*1000)}}</view>
+                                    <view catch:tap="onReply" class="replyBt" data-reply-parent-id="{{child.id}}" data-reply-user="{{child.author.nickname||'热心网友'}}" wx:if="{{post.reply_type==='all'}}">回复</view>
+                                </view>
+                                <view class="content">
+                                    <text class="text" style="margin-right: 10rpx" wx:if="{{child.reply_to&&child.parent}}">@{{child.reply_to}}</text>
+                                    <text decode selectable class="text">{{child.content}}</text>
+                                    <view class="text approved" wx:if="{{!child.approved}}">您的评论正在审核中...</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="noHint" wx:if="{{!comments.length}}">
+            <van-icon name="smile-comment-o"></van-icon>
+            <text>还没有评论，立即抢沙发~</text>
+            <van-button hairline plain round bind:click="bindGetUserInfo" customClass="btn2" data-method="onComment" disabled="{{post.comment_status!=='open'}}">
+                <view class="btn">{{post.comment_status!=='open'?'评论已关闭':'点击评论'}}</view>
+            </van-button>
+        </view>
+    </view>
+    <van-goods-action>
+        <van-button round bind:click="bindGetUserInfo" color="rgba(255,255,255,.08)" customClass="button-box comment-edit" data-method="onComment" disabled="{{post.comment_status!=='open'}}" style="width: 100%">
+            <view class="inner-button">
+                <van-icon color="#333" customClass="edit" name="edit" wx:if="{{!current_user.avatarurl.length}}"></van-icon>
+                <van-image round customClass="face" fit="cover" height="50rpx" showLoading="{{false}}" src="{{current_user.avatarurl}}" width="50rpx" wx:if="{{current_user.avatarurl.length}}"></van-image>
+                <view>{{post.comment_status!=='open'?'评论已关闭':'我来聊几句'}}</view>
+            </view>
+        </van-button>
+        <van-goods-action-icon openType="share">
+            <van-icon classPrefix="rich" color="rgba(255, 255, 255, .6)" customClass="weixin_i" name="weixin" size="48rpx" slot="icon"></van-icon>
+        </van-goods-action-icon>
+        <van-goods-action-icon bind:click="bindGetUserInfo" data-method="showPoster">
+            <van-icon classPrefix="rich" color="rgba(255, 255, 255, .6)" name="moments" size="48rpx" slot="icon"></van-icon>
+        </van-goods-action-icon>
+    </van-goods-action>
+    <van-popup closeable round safeAreaInsetBottom bind:close="showInputBox" closeIconPosition="top-left" duration="0" position="bottom" show="{{isShowInputBox}}">
+        <view class="input-box">
+            <view class="comment-button-box">
+                <van-button round bind:click="onSubmit" color="#07c160" customClass="comment-button" size="small">发表 </van-button>
+            </view>
+            <view class="hd">写评论</view>
+            <view class="field-box">
+                <textarea adjustPosition="{{false}}" bindinput="onChangeInput" class="textarea" cursorSpacing="60" fixed="{{true}}" focus="{{focus}}" placeholder="{{placeholder}}" placeholderClass="placeholder" showConfirmBar="{{false}}" value="{{comment}}"></textarea>
+            </view>
+        </view>
+    </van-popup>
+    <poster bind:closePoster="showPoster" poster="{{post}}" show="{{isShowPoster}}" user="{{current_user}}" wx:if="{{isShowPoster}}"></poster>
+</view>
+<wxs module="WXS" src="../../utils/wxs/utils.wxs" />

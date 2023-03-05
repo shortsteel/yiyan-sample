@@ -1,0 +1,9 @@
+<view class="wrap">
+    <navbarList activeIndex="{{activeIndex}}" bindchangeNavbarList="changeNavbarList" navbarListData="{{navbarListData}}" template="scrollStyle" themeColor="{{themeColor}}" wx:if="{{categories[0].children&&categories[0].children.length}}"></navbarList>
+    <view class="container" style="padding-top: {{categories[0].children&&categories[0].children.length?'0':'2rpx'}}">
+        <van-image lazyLoad customClass="hd_pic" fit="widthFix" showLoading="{{false}}" src="{{current_category.list_hd}}" width="750rpx" wx:if="{{current_category.list_hd}}"></van-image>
+        <articleList  class="list" isShowMore="{{false}}" themeColor="{{themeColor}}"></articleList>
+        <view bind:touchend="onTouchEnd" bind:touchstart="onTouchStart" class="noHint" wx:if="{{!posts.length&&!isLoading}}">暂无文章</view>
+    </view>
+</view>
+<van-loading class="loading" style="top:{{categories[0].children&&categories[0].children.length?'110rpx':'80rpx'}}" type="spinner" wx:if="{{isLoading}}"></van-loading>

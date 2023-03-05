@@ -1,0 +1,36 @@
+<van-loading class="loading" type="spinner" wx:if="{{isLoading}}"></van-loading>
+<block wx:if="{{home_type==='new'}}">
+    <view class="container" style="padding:0 {{module_page.padding||'0'}}rpx;background-color:{{module_page.bg_color||''}};{{module_page.bg_img?'background-image:url('+module_page.bg_img+');background-repeat:no-repeat;background-size:contain;':''}}" wx:if="{{!isLoading}}">
+        <productNavigationBar backgroundRgb="{{mainBgcolor}}" id="navigation-bar" navType="homeNav" showBgColor="{{showBgColor}}" showSearchBox="{{module_page.search_box}}" title="{{page_title}}"></productNavigationBar>
+        <view class="{{module_page.search_box?'main':''}}" style="padding-top: {{module_page.search_box?statusBarHeight+45:0}}px">
+            <view wx:for="{{modules}}" wx:key="key">
+                <view class="sticky" wx:if="{{item.type==='sticky'}}">
+                    <view class="title" style="text-align: {{item.setting.title_position}}" wx:if="{{item.setting.title_display}}"> {{item.title}} </view>
+                    <view bind:tap="goPage" data-item="{{item.content[0]}}" slot="topCardSlot" style="margin-bottom: {{item.setting.margin}}rpx" wx:if="{{!item.content[0].category[0].list_hide}}">
+                        <stickyCard article="{{item.content[0]}}" type="top"></stickyCard>
+                    </view>
+                </view>
+                <slide bindshowContactModal="showContactModal" slide="{{item}}" themeColor="{{themeColor}}" userInfo="{{userInfo}}" wx:if="{{item.type==='slider'}}"></slide>
+                <textMessage bindshowContactModal="showContactModal" second="{{second}}" size="{{size}}" textMessage="{{item}}" userInfo="{{userInfo}}" wx:if="{{item.type==='text'}}"></textMessage>
+                <textList bindshowContactModal="showContactModal" textList="{{item}}" userInfo="{{userInfo}}" wx:if="{{item.type==='text-list'}}"></textList>
+                <coupons bindonsubmitFormId="submitFormId" config="{{config}}" coupon="{{item}}" globalData="{{globalData}}" userCoupon="{{userCoupon}}" wx:if="{{item.type==='coupon'}}"></coupons>
+                <nav bindshowContactModal="showContactModal" config="{{config}}" nav="{{item}}" wx:if="{{item.type==='nav'}}"></nav>
+                <articleList articleList="{{item}}" isLastModule="{{modules[modules.length-1].id===item.id}}" posts="{{posts}}" themeColor="{{themeColor}}" wx:if="{{item.type==='post'}}"></articleList>
+                <cube cube="{{item}}" wx:if="{{item.type==='cube'}}"></cube>
+                <lvList lvObj="{{item}}" wx:if="{{item.type==='weapp_lvrm'}}"></lvList>
+                <gold-price goldData="{{item}}" wx:if="{{item.type==='gold_data'}}"></gold-price>
+                <customForm bind:submitFormData="submitFormData" form="{{item}}" wx:if="{{item.type==='form'}}"></customForm>
+            </view>
+        </view>
+        <view class="logo" id="loadProducts">
+            <logo logoObj="{{logoObj}}"></logo>
+        </view>
+    </view>
+    <service options="{{module_page.icons}}" sessionFrom="{\"nickName\":\"{{userInfo.nickname}}\", \"avatarUrl\":\"{{userInfo.avatarurl}}\", \"from\":\"home\"}" wx:if="{{module_page.icons.length}}"></service>
+    <include src="./templates/newUserCoupon/newUserCoupon.wxml" wx:if="{{isNewUser&&coupons_newbie&&coupons_newbie.length>0}}"></include>
+    <view class="home-guide" wx:if="{{guide_status&&module_page&&module_page.add_to_favorites}}">
+        <image class="home-guide_img" src="/icons/guide.svg"></image>
+    </view>
+    <myModal bindonCancel="onCancel" bindonConfirm="onConfirm" modal="{{contactModal}}"></myModal>
+    <companyContact plugid="{{config.contact.plugid}}" show="{{customServiceModal}}" wx:if="{{config.contact&&config.contact.type==='work_weixin'}}"></companyContact>
+</block>

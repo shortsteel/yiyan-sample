@@ -1,0 +1,124 @@
+.Wrapper {
+    padding-bottom: 32rpx;
+}
+
+.Wrapper .title {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 26rpx 25rpx 0;
+    text-align: center;
+}
+
+.Wrapper .couponsWrapper {
+    font-size: 0;
+    padding-left: 10rpx;
+    padding-top: 32rpx;
+    z-index: 9;
+}
+
+.Wrapper .couponsWrapper .coupons {
+    display: flex;
+}
+
+.Wrapper .couponsWrapper .coupon {
+    border-radius: 10rpx;
+    height: 136rpx;
+    line-height: 1.2;
+    margin-left: 20rpx;
+    position: relative;
+    width: 300rpx;
+}
+
+.Wrapper .couponsWrapper .moreCoupon {
+    height: 136rpx;
+    line-height: 1.2;
+    position: relative;
+    width: 101rpx;
+}
+
+.Wrapper .couponsWrapper .moreCoupon .moreBtn {
+    color: #707070;
+    font-size: 20rpx;
+    left: 40rpx;
+    position: absolute;
+    top: 26rpx;
+    width: 20rpx;
+}
+
+.Wrapper .couponsWrapper .couponInfoList {
+    color: #fff;
+    display: flex;
+    font-size: 9px;
+    height: 136rpx;
+    line-height: 1.4;
+    position: absolute;
+    width: 300rpx;
+    z-index: 2;
+}
+
+.Wrapper .couponsWrapper .couponInfoList .couponInfo {
+    color: #fff;
+    flex-direction: column;
+    font-size: 22rpx;
+    height: 136rpx;
+    justify-content: center;
+    position: absolute;
+    width: 180rpx;
+    z-index: 2;
+}
+
+.Wrapper .couponsWrapper .couponInfoList .couponInfo,.Wrapper .couponsWrapper .couponInfoList .couponInfo .reduce {
+    align-items: center;
+    display: flex;
+}
+
+.Wrapper .couponsWrapper .couponInfoList .couponInfo .reduce .reduceCost {
+    font-size: 46rpx;
+    margin: 0 5rpx;
+}
+
+.Wrapper .couponsWrapper .couponInfoList .couponInfo .reduce .reduceTitle {
+    font-size: 21rpx;
+}
+
+.Wrapper .couponsWrapper .couponInfoList .couponBtn {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 23rpx;
+    height: 136rpx;
+    justify-content: center;
+    position: absolute;
+    right: 43rpx;
+    z-index: 2;
+}
+
+.Wrapper .couponsWrapper .couponInfoList .couponBtn .couponUnuse {
+    line-height: 1.2;
+    width: 46rpx;
+}
+
+.Wrapper .couponsWrapper .couponInfoList .couponBtn .arrow {
+    position: absolute;
+    right: -25rpx;
+    width: 11rpx;
+    z-index: 2;
+}
+
+.Wrapper .couponsWrapper .bg {
+    height: 136rpx;
+    position: absolute;
+    width: 300rpx;
+    z-index: 1;
+}
+
+.top-radius {
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.bottom-radius {
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}

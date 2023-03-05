@@ -1,0 +1,19 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "van-loading": "./../../@vant/weapp/dist/loading/index",
+        "overlay": "./../../components/overlay/overlay",
+        "articleCard": "./../../components/articleCard/articleCard",
+        "formatContent": "./formatContent/formatContent",
+        "van-goods-action": "./../../@vant/weapp/dist/goods-action/index",
+        "van-goods-action-icon": "./../../@vant/weapp/dist/goods-action-icon/index",
+        "van-goods-action-button": "./../../@vant/weapp/dist/goods-action-button/index",
+        "van-button": "./../../@vant/weapp/dist/button/index",
+        "van-popup": "./../../@vant/weapp/dist/popup/index",
+        "van-icon": "./../../@vant/weapp/dist/icon/index",
+        "van-image": "./../../@vant/weapp/dist/image/index",
+        "poster": "./../../components/poster/index",
+        "markForm": "./../../components/markForm/markForm",
+        "service": "./../../components/service/index"
+    }
+}

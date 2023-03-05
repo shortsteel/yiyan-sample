@@ -1,0 +1,14 @@
+.container {
+    height: 100%;
+}
+
+.container .section {
+    grid-column-gap: 20rpx;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 40rpx;
+}
+
+.container .section .articleItem .card-img {
+    border-radius: 6rpx;
+}

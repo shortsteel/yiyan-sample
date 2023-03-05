@@ -1,0 +1,15 @@
+.serviceContainer {
+    bottom: 8%;
+    position: fixed;
+    right: 20rpx;
+    z-index: 9999;
+}
+
+.serviceContainer .option {
+    margin-top: 24rpx;
+}
+
+.serviceContainer .icon {
+    height: 90rpx;
+    width: 90rpx;
+}

@@ -1,0 +1,5 @@
+<view class="blog-header" style="height:{{height}}rpx">
+    <view class="blog-header-overlay" wx:if="{{isOverlay}}"></view>
+    <image class="header-image-block" mode="aspectFill" src="{{bgImg}}" style="filter:blur({{blur}}rpx);"></image>
+    <slot name="topCardSlot"></slot>
+</view>

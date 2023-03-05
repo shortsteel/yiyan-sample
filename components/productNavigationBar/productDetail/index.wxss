@@ -1,0 +1,35 @@
+.menu-wrapper {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.menu-wrapper .menu-list {
+    border-radius: 12rpx;
+    left: 3%;
+    position: absolute;
+    top: 11%;
+}
+
+.menu-wrapper .menu-list .menu-arrow {
+    border: 18rpx solid transparent;
+    border-bottom-color: #fff;
+    height: 0;
+    left: 100rpx;
+    position: absolute;
+    top: -26rpx;
+    width: 0;
+}
+
+.menu-wrapper .menu-list .menu-item {
+    align-items: center;
+    border-bottom: 1rpx solid #d7d7d7;
+    display: flex;
+    font-size: 14px;
+    height: 80rpx;
+    margin: 0 28rpx 0 16rpx;
+}
+
+.menu-wrapper .menu-list .menu-item .menu-icon {
+    margin-right: 16rpx;
+}

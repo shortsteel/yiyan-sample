@@ -1,0 +1,13 @@
+<view class="navigation-bar-wrap">
+    <productDetail showBgColor="{{showBgColor}}" wx:if="{{navType==='productNav'}}"></productDetail>
+    <navigationBar background="{{backgroundRgb}}" color="{{themeColor.navigationBarTextStyle}}" id="navigationBar" showBgColor="{{showBgColor}}" title="{{showBgColor&&!showSearchBox?title:''}}" wx:if="{{navType==='homeNav'}}">
+        <navigator class="bar-left-store" slot="left" url="/pages/multiStoreList/multiStoreList" wx:if="{{config.offline_store_enable&&showSearchBox}}">
+            <text class="store-name">{{globalData.currentStore&&globalData.currentStore.name||'选择门店'}}</text>
+            <image class="triangle" src="/icons/triangle.svg"></image>
+        </navigator>
+        <view bind:tap="go" class="bar-center" data-url="/pages/search/search" slot="center" style="{{barCenterStyle}};" wx:if="{{showSearchBox}}">
+            <van-icon classPrefix="rich" customClass="bar-center-icon" name="url" slot="icon"></van-icon>
+            <text>搜索</text>
+        </view>
+    </navigationBar>
+</view>

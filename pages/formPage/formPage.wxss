@@ -1,0 +1,6 @@
+.container .title {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20rpx 0;
+    text-align: center;
+}

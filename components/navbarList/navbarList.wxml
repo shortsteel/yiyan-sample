@@ -1,0 +1,5 @@
+<include src="./templates/default.wxml" wx:if="{{template==='default'}}"></include>
+<include src="./templates/scrollStyle.wxml" wx:if="{{template==='scrollStyle'}}"></include>
+<include src="./templates/fixedStyle.wxml" wx:if="{{template==='fixedStyle'}}"></include>
+<include src="./templates/cartStyle.wxml" wx:if="{{template==='cartStyle'}}"></include>
+<include src="./templates/multiStyle.wxml" wx:if="{{template==='multiStyle'}}"></include>

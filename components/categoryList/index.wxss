@@ -1,0 +1,86 @@
+.container .categoryName {
+    font-size: 10pt;
+    text-align: center;
+}
+
+.bigCard .category,.smallCard .category {
+    position: relative;
+}
+
+.bigCard .categoryName,.smallCard .categoryName {
+    color: #fff;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.bigCard .category {
+    margin-bottom: 10rpx;
+}
+
+.bigCard .categoryImage {
+    height: 270rpx;
+    width: 100%;
+}
+
+.bigCard .categoryName {
+    font-size: 12pt;
+    line-height: 270rpx;
+}
+
+.smallCard {
+    font-size: 10pt;
+    padding: 35rpx 30rpx 5rpx 0;
+}
+
+.smallCard .category {
+    display: inline-block;
+    margin-bottom: 30rpx;
+    margin-left: 30rpx;
+    width: 150rpx;
+}
+
+.smallCard .categoryImage {
+    height: 150rpx;
+    width: 150rpx;
+}
+
+.smallCard .categoryName {
+    line-height: 150rpx;
+}
+
+.textCard {
+    padding: 50rpx 60rpx 40rpx 0;
+}
+
+.textCard .category {
+    display: inline-block;
+    margin-bottom: 10rpx;
+    margin-left: 60rpx;
+    width: 110rpx;
+}
+
+.textCard .categoryImage {
+    height: 110rpx;
+    width: 110rpx;
+}
+
+.textCard .categoryName {
+    width: 110rpx;
+}
+
+.text {
+    padding: 55rpx 80rpx 15rpx 0;
+}
+
+.text .category {
+    display: inline-block;
+    margin-bottom: 40rpx;
+    margin-left: 80rpx;
+    width: 80rpx;
+}
+
+.text .categoryName {
+    width: 80rpx;
+}

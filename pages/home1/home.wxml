@@ -1,0 +1,18 @@
+<van-loading class="loading" type="spinner" wx:if="{{isLoading}}"></van-loading>
+<view class="container {{isIphoneX?'iphoneX':''}}" wx:if="{{!isLoading}}">
+    <overlay isOverlay bgImg="{{bg_img}}" blur="{{10}}" height="{{900}}" wx:if="{{sticky}}">
+        <view bind:tap="goPage" class="top-wrap" data-item="{{sticky}}" slot="topCardSlot">
+            <articleCard article="{{sticky}}" type="top"></articleCard>
+        </view>
+    </overlay>
+    <view class="section">
+        <view bind:tap="goPage" class="articleItem" data-item="{{item}}" wx:for="{{posts}}">
+            <ad adTheme="{{config.post_list_ad.theme}}" adType="{{config.post_list_ad.type}}" gridCount="{{config.post_list_ad.grid_count}}" gridOpacity="0.8" style="margin-bottom: 50rpx" unitId="{{config.post_list_ad.unit_id}}" wx:if="{{config.post_list_ad.position===index}}"></ad>
+            <articleCard article="{{item}}"></articleCard>
+        </view>
+        <view class="noHint" wx:if="{{!next_cursor&&posts.length}}">没有更多文章了...</view>
+    </view>
+</view>
+<view class="home-guide" wx:if="{{guide_status}}">
+    <image class="home-guide_img" src="/icons/guide.svg"></image>
+</view>

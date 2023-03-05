@@ -1,0 +1,16 @@
+.popup-content {
+    justify-content: center;
+}
+
+.popup-content,.popup-content .box {
+    align-items: center;
+    display: flex;
+}
+
+.popup-content .box .box-img {
+    margin-right: 20rpx;
+}
+
+.popup-content .box .box-title {
+    line-height: 60rpx;
+}

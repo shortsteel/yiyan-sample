@@ -1,0 +1,2 @@
+<web-view bindmessage="bindmessage" src="{{src}}" wx:if="{{src}}"></web-view>
+<cover-view class="tp"></cover-view>

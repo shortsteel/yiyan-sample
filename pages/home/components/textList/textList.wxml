@@ -1,0 +1,12 @@
+<view class="textList {{setting.border_top_radius?'top-radius':''}} {{setting.border_bottom_radius?'bottom-radius':''}}" style="margin-bottom: {{setting.margin}}rpx;background-color:{{setting.background}}">
+    <view class="title" style="text-align: {{setting.title_position}};color:{{setting.title_color}}" wx:if="{{setting.title_display}}">{{title}}</view>
+    <view class="{{setting.orientation==='horizontal'?'horizontal':'list'}}">
+        <view class="list-item" wx:for="{{content}}" wx:key="index">
+            <image class="item-icon-img" mode="aspectFit" src="/icons/icon/ico-7-1.svg" wx:if="{{setting.icon==='yes'}}"></image>
+            <image class="item-icon-img" mode="aspectFit" src="/icons/icon/heart.svg" wx:if="{{setting.icon==='heart'}}"></image>
+            <extenNav item="{{item}}">
+                <text class="link-text" slot="content" style="color:{{item.color}}">{{item.text}}</text>
+            </extenNav>
+        </view>
+    </view>
+</view>

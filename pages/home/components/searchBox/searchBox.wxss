@@ -1,0 +1,49 @@
+.box {
+    display: flex;
+    height: 90rpx;
+    left: 0;
+    padding: 12rpx 40rpx;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+}
+
+.box .searchBox {
+    flex: 1;
+}
+
+.box .searchBox .search {
+    align-items: center;
+    border-radius: 100rpx;
+    color: #707070;
+    display: flex;
+    font-size: 22rpx;
+    height: 60rpx;
+    justify-content: center;
+    line-height: 60rpx;
+    text-align: center;
+}
+
+.box .searchBox .search .input {
+    width: 100%;
+}
+
+.box .searchBox .search .searchIcon {
+    height: 28rpx;
+    line-height: 28rpx;
+    margin-right: 20rpx;
+    width: 28rpx;
+}
+
+.box .box-right {
+    color: #fff;
+    font-size: 12px;
+    line-height: 60rpx;
+    overflow: hidden;
+    padding-left: 10rpx;
+    text-align: end;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 250rpx;
+}

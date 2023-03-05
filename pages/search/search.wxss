@@ -1,0 +1,165 @@
+.header {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.searchWrapper {
+    align-items: center;
+    display: flex;
+    height: 100rpx;
+    padding: 15rpx 40rpx;
+    z-index: 9;
+}
+
+.searchWrapper .inputWrapper {
+    background-color: hsla(0,0%,100%,.1);
+    border-radius: 10rpx;
+    flex-grow: 1;
+    font-size: 10pt;
+    height: 70rpx;
+    left: 0;
+    overflow: hidden;
+    padding: 0 40rpx;
+    position: relative;
+    top: 0;
+    z-index: 10;
+}
+
+.searchWrapper .inputWrapper .input {
+    color: #fff;
+    font-size: 10pt;
+    height: 70rpx;
+    line-height: 70rpx;
+    width: 100%;
+}
+
+.searchWrapper .inputWrapper .input-placeholder {
+    color: #9fa0a0;
+}
+
+.searchWrapper .inputWrapper .clearIncon {
+    font-size: 16px;
+    position: absolute;
+    right: 25rpx;
+    top: 50%;
+    transform: translate(0,-50%);
+    z-index: 11;
+}
+
+.searchWrapper .searchBt {
+    flex-shrink: 0;
+    font-size: 14px;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0 20rpx 0 40rpx;
+}
+
+.sortOptions {
+    width: 100%;
+}
+
+.sortOptions,.sortOptions .sortOption {
+    align-items: center;
+    display: flex;
+}
+
+.sortOptions .sortOption {
+    color: #707070;
+    font-size: 10pt;
+    height: 60rpx;
+    justify-content: center;
+    line-height: 60rpx;
+    width: 50%;
+}
+
+.sortOptions .sortOption.selected {
+    color: #333;
+}
+
+.sortOptions .indicators {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 24rpx;
+    justify-content: center;
+    margin-left: 14rpx;
+    margin-top: -6rpx;
+}
+
+.sortOptions .triangleIcon {
+    height: 9rpx;
+    width: 16rpx;
+}
+
+.sortOptions .triangleIconUp {
+    margin-bottom: 6rpx;
+}
+
+.main {
+    margin-top: 100rpx;
+    padding: 0 40rpx;
+}
+
+.main .clearHistory {
+    display: inline-block;
+    float: right;
+    padding: 0 20rpx;
+}
+
+.main .noSearch {
+    padding-top: 40rpx;
+}
+
+.main .searchHintTitle {
+    font-size: 14px;
+    margin-bottom: 40rpx;
+    opacity: .8;
+}
+
+.main .noSearchKey {
+    font-size: 9pt;
+    margin-top: 100rpx;
+    opacity: .5;
+    text-align: center;
+}
+
+.main .searchKey {
+    background: hsla(0,0%,100%,.1);
+    border-radius: 10rpx;
+    display: inline-block;
+    font-size: 13px;
+    margin: 0 20rpx 20rpx 0;
+    padding: 8rpx 30rpx;
+}
+
+.main .section {
+    column-gap: 20rpx;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 40rpx 0;
+}
+
+.main .section .articleItem .card-img {
+    border-radius: 6rpx;
+}
+
+.main .noHint {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30%;
+}
+
+.main .noHint .icon {
+    height: 300rpx;
+    width: 300rpx;
+}
+
+.main .noHint .text {
+    color: #707070;
+    font-size: 16px;
+}

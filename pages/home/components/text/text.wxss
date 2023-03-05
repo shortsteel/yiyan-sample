@@ -1,0 +1,91 @@
+.Wrapper {
+    overflow: hidden;
+}
+
+.Wrapper .title {
+    background-color: #fff;
+    font-size: 35rpx;
+    font-weight: 700;
+    padding: 26rpx 25rpx;
+    text-align: center;
+}
+
+.Wrapper .announcement {
+    align-items: center;
+    display: flex;
+    font-size: 22rpx;
+    height: 70rpx;
+    width: 100%;
+}
+
+.Wrapper .announcement .btn {
+    background-color: #fff;
+}
+
+@-webkit-keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-33.3%);
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-33.3%);
+    }
+}
+
+.Wrapper .announcement .marqueeWrapper {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-overflow: clip;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.Wrapper .announcement .marqueeWrapper .content {
+    animation-duration: 10s;
+    display: inline-block;
+    font-size: 12px;
+    padding-right: 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+.Wrapper .announcement .marqueeWrapper .marque {
+    animation-iteration-count: infinite;
+    animation-name: marquee;
+    animation-timing-function: linear;
+}
+
+.Wrapper .announcement .marqueeWrapper .content-space {
+    display: inline-block;
+    width: 300px;
+}
+
+.top-radius {
+    border-top-left-radius: 16rpx;
+    border-top-right-radius: 16rpx;
+}
+
+.bottom-radius {
+    border-bottom-left-radius: 16rpx;
+    border-bottom-right-radius: 16rpx;
+}
+
+.Wrapper .fix {
+    align-items: center;
+    display: flex;
+    font-size: 9px;
+    height: 70rpx;
+    justify-content: center;
+    text-align: center;
+}

@@ -1,0 +1,14 @@
+.container,.container .call,.container .nav {
+    height: 100%;
+}
+
+.container .btn {
+    align-items: center;
+    background-color: initial;
+    border: none;
+    display: block;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}

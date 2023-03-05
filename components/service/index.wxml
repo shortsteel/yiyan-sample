@@ -1,0 +1,9 @@
+<view class="serviceContainer">
+    <view class="option" wx:for="{{options}}" wx:key="index">
+        <extenNav bind:onCustomService="onCustomService" item="{{item}}">
+            <image class="icon" mode="aspectFit" slot="content" src="{{item.icon}}"></image>
+        </extenNav>
+    </view>
+</view>
+<companyContact plugid="{{config.contact.plugid}}" show="{{customServiceModal}}" wx:if="{{config.contact&&config.contact.type==='work_weixin'}}"></companyContact>
+<myModal bindonCancel="onCancel" bindonConfirm="onConfirm" modal="{{contactModal}}"></myModal>

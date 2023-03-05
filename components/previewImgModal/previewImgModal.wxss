@@ -1,0 +1,29 @@
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80rpx 20rpx;
+}
+
+.container .img {
+    height: 100%;
+    width: 100%;
+}
+
+.container .btn-list {
+    display: flex;
+    margin-top: 80rpx;
+}
+
+.container .btn-list .save {
+    border-radius: 20rpx;
+    color: #fff;
+    font-size: 26rpx;
+    margin-left: 30rpx;
+    width: 200rpx;
+}
+
+.container .btn-list .save:first-child {
+    margin-left: 0;
+}

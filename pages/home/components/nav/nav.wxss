@@ -1,0 +1,84 @@
+.Wrapper {
+    overflow: hidden;
+}
+
+.Wrapper .title {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 26rpx 25rpx 0;
+    text-align: center;
+}
+
+.Wrapper .categoryBox {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 10rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.Wrapper .categoryBox .homeCategory,.Wrapper .categoryBox .homeWrapper {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+}
+
+.Wrapper .categoryBox .homeCategory .categoryItem,.Wrapper .categoryBox .homeWrapper .categoryItem {
+    line-height: 0;
+}
+
+.Wrapper .categoryBox .homeCategory .categoryItem .categoryImg,.Wrapper .categoryBox .homeWrapper .categoryItem .categoryImg {
+    border-radius: 5rpx;
+    height: 100rpx;
+    width: 100rpx;
+}
+
+.Wrapper .categoryBox .homeCategory .categoryBtn,.Wrapper .categoryBox .homeWrapper .categoryBtn {
+    background-color: initial;
+    color: #333;
+    font-size: 12px;
+}
+
+.Wrapper .categoryBox .homeCategory .categoryTitle,.Wrapper .categoryBox .homeWrapper .categoryTitle {
+    font-size: 11px;
+    line-height: 2.4;
+    margin-bottom: 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.Wrapper .categoryBox .homeWrapper {
+    width: 20%;
+}
+
+.top-radius {
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.bottom-radius {
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}
+
+.Wrapper .n6 {
+    flex-flow: nowrap;
+    overflow-x: scroll;
+    padding: 0 20rpx;
+}
+
+.Wrapper .n6::-webkit-scrollbar {
+    display: none;
+}
+
+.Wrapper .n6 .homeWrapper {
+    padding: 0 18rpx;
+    width: auto;
+}
+
+.Wrapper .n6 .homeWrapper:last-child {
+    padding-right: 40rpx;
+}

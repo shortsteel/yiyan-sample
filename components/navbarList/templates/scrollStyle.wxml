@@ -1,0 +1,7 @@
+<van-sticky>
+    <view class="scroll-bg">
+        <van-tabs active="{{activeIndex}}" bind:click="changeActive" border="{{false}}" color="#ffd101" customClass="scroll-tabs" ellipsis="{{false}}" lineWidth="20" navClass="scroll-nav" tabActiveClass="scroll-active" tabClass="scroll-tab" zIndex="99">
+            <van-tab title="{{item.text}}" wx:for="{{navbarListData}}" wx:key="item"></van-tab>
+        </van-tabs>
+    </view>
+</van-sticky>

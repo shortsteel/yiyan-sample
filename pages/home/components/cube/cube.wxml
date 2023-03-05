@@ -1,0 +1,4 @@
+<view class="Wrapper {{setting.border_top_radius?'top-radius':''}} {{setting.border_bottom_radius?'bottom-radius':''}}" style="margin-bottom: {{setting.margin}}rpx;background-color:{{setting.background}}">
+    <view class="title" style="text-align: {{setting.title_position}}" wx:if="{{setting.title_display}}"> {{cube.title}} </view>
+    <magicImg isMarginTopZero="{{true}}" magicImgData="{{magicImgData}}" wx:if="{{magicImgData}}"></magicImg>
+</view>

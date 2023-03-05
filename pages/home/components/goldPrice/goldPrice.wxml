@@ -1,0 +1,31 @@
+<view class="container" style="margin-bottom: {{setting.margin}}rpx">
+    <view class="title" style="text-align: {{setting.title_position}}" wx:if="{{setting.title_display}}">{{goldData.title}}</view>
+    <view class="gold" wx:if="{{gold}}">
+        <view class="gold-price">
+            <view class="gold-price-item price-now">
+                <text class="now-text">实时金价 (元/克）</text>
+                <view class="now-num">
+                    <text>{{gold.base_price||0}}</text>
+                    <view class="range range-up" wx:if="{{gold.sign===1}}">
+                        <image class="range-img" src="/icons/goldPrice/gold-up.svg"></image>
+                        <text class="range-num">{{gold.limit||'0%'}}</text>
+                    </view>
+                    <view class="range range-down" wx:elif="{{gold.sign===0}}">
+                        <image class="range-img" src="/icons/goldPrice/gold-down.svg"></image>
+                        <text class="range-num">{{gold.limit||'0%'}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="gold-price-item price-today">
+                <view class="today-item">
+                    <text>今日最低金价(元/克)</text>
+                    <text class="today-num">{{gold.min_price||0}}</text>
+                </view>
+                <view class="today-item today-max">
+                    <text>今日最高金价(元/克)</text>
+                    <text class="today-num">{{gold.max_price||0}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

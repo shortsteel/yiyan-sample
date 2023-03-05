@@ -1,0 +1,10 @@
+<van-popup bind:close="closePoster" customClass="poster-modal" show="{{show}}">
+    <view class="poster-box">
+        <painter bind:imgErr="onImgErr" bind:imgOK="onImgOK" palette="{{palette}}" style="position:fixed;top:-9999rpx" widthPixels="800"></painter>
+        <image class="big" mode="widthFix" src="{{imagePath}}"></image>
+        <view class="btn-box" wx:if="{{imagePath}}">
+            <van-button round bind:click="saveImage" color="#576b95">点击按钮保存</van-button>
+            <image bind:tap="closePoster" class="close-icon" src="/icons/close.svg"></image>
+        </view>
+    </view>
+</van-popup>

@@ -1,0 +1,9 @@
+<van-popup closeable bind:close="onClose" customStyle="width: 80%;border-radius:20rpx" show="{{show}}">
+    <view class="container">
+        <image class="img" mode="widthFix" src="{{image}}"></image>
+        <view class="btn-list" hoverClass="none" hoverStopPropagation="false">
+            <button bindtap="downloadImg" class="save" style="background:{{themeColor.primaryColor}}">保存图片</button>
+            <button bindtap="shareImage" class="save" style="color:{{themeColor.primaryColor}};border:1rpx solid {{themeColor.primaryColor}}">分享给好友</button>
+        </view>
+    </view>
+</van-popup>

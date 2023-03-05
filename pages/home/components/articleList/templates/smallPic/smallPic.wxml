@@ -1,0 +1,5 @@
+<view class="smallPic {{article.category[0].list_dress?'list-dress':''}}">
+    <van-image lazyLoad customClass="card-img" fit="widthFix" showLoading="{{false}}" src="{{article.thumbnail}}" width="100%"></van-image>
+    <text class="l" wx:if="{{type==='creation'}}">{{article.category[0].name}}</text>
+    <text class="hd">{{article.title}}</text>
+</view>

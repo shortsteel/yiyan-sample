@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "myAudio": "./../../../components/myAudio/myAudio",
+        "previewImgModal": "./../../../components/previewImgModal/previewImgModal"
+    }
+}

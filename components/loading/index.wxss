@@ -1,0 +1,27 @@
+.loadingIcon {
+    animation: rolling .8s linear infinite;
+    display: block;
+    height: 40rpx;
+    margin: 20rpx auto;
+    width: 40rpx;
+}
+
+@-webkit-keyframes rolling {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes rolling {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}

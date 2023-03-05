@@ -1,0 +1,15 @@
+<van-loading class="loading" type="spinner" wx:if="{{isLoading}}"></van-loading>
+<view class="container {{isIphoneX?'iphoneX':''}}" wx:if="{{!isLoading}}">
+    <view class="section">
+        <view class="l">
+            <view bind:tap="go" class="articleItem" data-url="/pages/articleDetail/articleDetail?id={{item.id}}" wx:for="{{posts}}">
+                <articleCard article="{{item}}" type="fav" wx:if="{{index%2==0}}"></articleCard>
+            </view>
+        </view>
+        <view class="r">
+            <view bind:tap="go" class="articleItem" data-url="/pages/articleDetail/articleDetail?id={{item.id}}" wx:for="{{posts}}">
+                <articleCard article="{{item}}" type="fav" wx:if="{{index%2==1}}"></articleCard>
+            </view>
+        </view>
+    </view>
+</view>

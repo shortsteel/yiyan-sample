@@ -1,0 +1,6 @@
+<view class="container {{categoryListStyle}}">
+    <navigator class="category" hoverClass="navigator-hover" openType="{{tabbarPages[item.page_key]?'switchTab':'navigate'}}" url="/pages/productList/productList?categoryId={{category.id}}" wx:for="{{categories}}" wx:for-index="categoryIndex" wx:for-item="category" wx:key="id">
+        <image class="categoryImage" mode="aspectFill" src="{{category.thumbnail}}" wx:if="{{categoryListStyle!=='text'}}"></image>
+        <view class="categoryName" wx:if="{{categoryListStyle!=='smallCard'}}">{{category.name}}</view>
+    </navigator>
+</view>

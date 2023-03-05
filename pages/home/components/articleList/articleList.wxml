@@ -1,0 +1,16 @@
+<view class="section {{setting.style}} {{setting.border_top_radius?'top-radius':''}} {{setting.border_bottom_radius?'bottom-radius':''}}" style="margin-bottom: {{setting.margin}}rpx;background-color:{{setting.background}}" wx:if="{{content&&content.length}}">
+    <view class="sectionTitle" style="text-align:{{setting.title_position}};color:{{setting.title_color}}" wx:if="{{setting.title_display}}">{{title}}</view>
+    <view class="content">
+        <navigator hoverClass="navigator-hover" url="{{article.format==='link'?'/pages/webPages/webPages?src='+article.format_content.link:'/pages/articleDetail/articleDetail?id='+article.id}}" wx:for="{{content}}" wx:for-item="article" wx:key="id">
+            <ad adTheme="{{config.post_list_ad.theme}}" adType="{{config.post_list_ad.type}}" gridCount="{{config.post_list_ad.grid_count}}" gridOpacity="0.8" style="margin-top: 30rpx" unitId="{{config.post_list_ad.unit_id}}" wx:if="{{config.post_list_ad.position===index}}"></ad>
+            <include src="./templates/smallPic/smallPic.wxml" wx:if="{{article.mode===1}}"></include>
+            <include src="./templates/bigPic/bigPic.wxml" wx:if="{{article.mode===0}}"></include>
+        </navigator>
+    </view>
+    <view bind:tap="goMore" class="sectionMore" wx:if="{{setting.more}}">
+        <view class="moreButton">
+            <span>查看更多</span>
+            <van-icon classPrefix="rich" customClass="x_more" name="more" size="18rpx" slot="icon"></van-icon>
+        </view>
+    </view>
+</view>

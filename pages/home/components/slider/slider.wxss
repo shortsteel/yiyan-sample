@@ -1,0 +1,89 @@
+.Wrapper {
+    overflow: hidden;
+    transform: translateY(0);
+}
+
+.Wrapper .title {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 26rpx 25rpx;
+    text-align: center;
+}
+
+.Wrapper button {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    outline: none;
+    padding: 0;
+}
+
+.Wrapper button:after {
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+}
+
+.Wrapper .bannerImg {
+    height: 100%;
+    width: 100%;
+}
+
+.Wrapper .searchSliders {
+    position: relative;
+}
+
+.Wrapper .searchSliders .dots {
+    bottom: 20rpx;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+.Wrapper .searchSliders .dots .dot {
+    background: rgba(0,0,0,.5);
+    border-radius: 20rpx;
+    color: #fff;
+    font-size: 20rpx;
+    padding: 3rpx 18rpx;
+    transition: all .6s;
+}
+
+.Wrapper.top-radius {
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.Wrapper.bottom-radius {
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}
+
+.dots2 {
+    bottom: 20rpx;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.dots2 .spot {
+    background-color: #fff;
+    border-radius: 10rpx;
+    display: inline-block;
+    height: 10rpx;
+    margin: 0 6rpx;
+    opacity: .3;
+    transition: .3s;
+    width: 10rpx;
+}
+
+.dots2 .spot.active {
+    opacity: .8;
+    width: 30rpx;
+}
+
+.full {
+    height: 100vh;
+}

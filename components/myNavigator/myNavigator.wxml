@@ -1,0 +1,6 @@
+<form bindsubmit="submitFormId" class="label" reportSubmit="true">
+    <label class="label" for="notDisplayId" formType="submit">
+        <slot></slot>
+    </label>
+    <button class="notDisplayBtn" formType="submit" id="notDisplayId"></button>
+</form>

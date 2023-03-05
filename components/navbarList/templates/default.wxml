@@ -1,0 +1,3 @@
+<view class="default" style="top: {{top}}; position: {{position}}">
+    <view bind:tap="changeActive" class="item {{activeIndex===index?'selected':''}}" data-index="{{index}}" data-value="{{item.value}}" style="{{themeColor.primaryColor?'border-bottom-color:':''}} {{themeColor.primaryColor}}" wx:for="{{navbarListData}}" wx:key="value">{{item.text}}</view>
+</view>

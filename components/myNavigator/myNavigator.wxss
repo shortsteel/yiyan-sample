@@ -1,0 +1,11 @@
+.notDisplayBtn {
+    height: 0;
+    opacity: 0;
+    width: 0;
+}
+
+.label {
+    display: block;
+    height: 100%;
+    width: 100%;
+}

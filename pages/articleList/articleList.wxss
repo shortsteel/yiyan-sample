@@ -1,0 +1,43 @@
+.loading {
+    position: static;
+}
+
+.container {
+    height: 100%;
+    padding-bottom: 60rpx;
+}
+
+.container .hd_pic {
+    display: block;
+    transition: .3s;
+}
+
+.container .noHint {
+    margin-top: 70rpx;
+    opacity: .6;
+    text-align: center;
+}
+
+.container .section {
+    padding: 25rpx;
+}
+
+.container .section .articleItem {
+    margin-bottom: 50rpx;
+}
+
+.container .section .articleItem .card-img {
+    border-radius: 6rpx;
+}
+
+.container .section .noHint {
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 6rpx;
+    color: #333;
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    margin-top: 70rpx;
+    padding: 20rpx 0;
+}

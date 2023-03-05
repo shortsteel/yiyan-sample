@@ -1,0 +1,7 @@
+<include src="./templates/default/default.wxml" wx:if="{{tplStyle==='default'}}"></include>
+<include src="./templates/tplStyleTwo/tplStyleTwo.wxml" wx:if="{{tplStyle==='vip_tpl_two'}}"></include>
+<include src="./templates/tplStyleThree/tplStyleThree.wxml" wx:if="{{tplStyle==='vip_tpl_three'}}"></include>
+<include src="./templates/tplStyleFour/tplStyleFour.wxml" wx:if="{{tplStyle==='vip_tpl_four'}}"></include>
+<include src="./templates/tplStyleFive/tplStyleFive.wxml" wx:if="{{tplStyle==='vip_tpl_five'}}"></include>
+<include src="./templates/tplStyleSix/tplStyleSix.wxml" wx:if="{{tplStyle==='vip_tpl_six'}}"></include>
+<myModal bindonCancel="onCancel" bindonConfirm="onConfirm" modal="{{contactModal}}"></myModal>

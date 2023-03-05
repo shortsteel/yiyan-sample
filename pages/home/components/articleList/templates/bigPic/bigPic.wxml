@@ -1,0 +1,29 @@
+<view class="bigPic">
+    <view class="card-img img-{{type}}">
+        <van-image lazyLoad customClass="pic" fit="widthFix" src="{{article.thumbnail}}"></van-image>
+        <view class="play" wx:if="{{article.format==='video'}}">
+            <van-icon classPrefix="van-icon" customClass="van-icon iplay" name="play-circle-o" slot="icon"></van-icon>
+        </view>
+    </view>
+    <view class="t1 t1-{{type}}" wx:if="{{type!=='related'}}">{{article.title}}</view>
+    <view class="t3">{{article.excerpt}}</view>
+    <view class="t2">
+        <view catch:tap="go" class="v list" data-url="/pages/articleList/articleList?category_id={{article.category[0].id}}" wx:if="{{article.category.length}}">
+            <van-icon classPrefix="van-icon" customClass="van-icon" name="{{article.format==='video'?'video':'notes'}}-o" slot="icon"></van-icon>{{article.category[0].name}} </view>
+        <view class="v time">
+            <van-icon classPrefix="van-icon" customClass="van-icon itime" name="underway-o" slot="icon"></van-icon>{{article.time}} </view>
+        <view class="v views">
+            <van-icon classPrefix="van-icon" customClass="van-icon iviews" name="like-o" slot="icon"></van-icon>{{article.views}} </view>
+    </view>
+    <view class="bt" wx:if="{{article.post_tag.length}}">
+        <view catch:tap="go" class="tag" data-url="/pages/articleList/articleList?tag={{item.slug}}" wx:for="{{article.post_tag}}" wx:key="id">#{{item.name}} </view>
+    </view>
+    <view class="content content-{{type}}" wx:if="{{type==='related'}}">{{article.title}}</view>
+    <view class="summary-wrapper" wx:if="{{type==='top'}}">
+        <view class="summary-block">
+            <view class="summary-gradient"></view>
+            <view class="summary-paragraph">{{article.excerpt}}</view>
+        </view>
+        <view class="more">阅读更多 →</view>
+    </view>
+</view>

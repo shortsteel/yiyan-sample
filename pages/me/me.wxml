@@ -1,0 +1,52 @@
+<view class="top">
+    <van-image customClass="bg-img" fit="widthFix" showLoading="{{false}}" src="{{config.background_image||''}}" width="750rpx"></van-image>
+</view>
+<view class="aui-scrollView">
+    <view class="aui-head-bg">
+        <view class="aui-mon-head">
+            <button bindtap="bindGetUserInfo" class="avatar-btn" lang="zh_CN">
+                <van-image round customClass="aui-mon-user" fit="cover" showLoading="{{false}}" src="{{user.avatarurl||'/icons/unlogin.svg'}}"></van-image>
+            </button>
+            <view class="aui-mon-title">{{user.nickname||'点击头像登录'}}</view>
+            <view class="aui-mon-area">
+                <view class="area-detail" wx:if="{{user.province||user.city}}">{{user.province}} {{user.city}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="order-status" wx:if="{{config&&config.minishop}}">
+        <orderStatus></orderStatus>
+    </view>
+    <view class="aui-mon-list" style="margin-top: {{config.minishop?'30rpx':'32rpx'}}">
+        <view bind:tap="go" class="aui-flex" data-url="/pages/creationList/creationList" wx:if="{{user.edit_posts}}">
+            <view class="aui-cou-img">
+                <van-icon classPrefix="van-icon" name="{{article.format==='video'?'video':'notes'}}-o" slot="icon"></van-icon>
+            </view>
+            <view class="aui-flex-box">我的文章</view>
+            <view class="aui-arrow"></view>
+        </view>
+        <view bind:tap="go" class="aui-flex" data-url="/pages/me/favList/favList" wx:if="{{config.post_favs}}">
+            <view class="aui-cou-img">
+                <van-icon classPrefix="van-icon" name="like-o" slot="icon"></van-icon>
+            </view>
+            <view class="aui-flex-box">我的点赞</view>
+            <view class="aui-arrow"></view>
+        </view>
+        <button class="aui-flex contact" openType="contact" sessionFrom="{\"nickName\":\"{{user.nickname}}\", \"avatarUrl\":\"{{user.avatarurl}}\", \"from\":\"me\"}" showMessageCard="{{true}}">
+            <view class="aui-cou-img">
+                <van-icon classPrefix="van-icon" name="chat-o" slot="icon"></van-icon>
+            </view>
+            <view class="aui-flex-box">联系客服</view>
+            <view class="aui-arrow"></view>
+        </button>
+        <view bind:tap="clearStorage" class="aui-flex">
+            <view class="aui-cou-img">
+                <van-icon classPrefix="van-icon" name="bulb-o" slot="icon"></van-icon>
+            </view>
+            <view class="aui-flex-box">清除缓存</view>
+            <view class="aui-arrow"></view>
+        </view>
+    </view>
+    <view class="peanut-logo logo">
+        <logo logoObj="{{logoObj}}"></logo>
+    </view>
+</view>

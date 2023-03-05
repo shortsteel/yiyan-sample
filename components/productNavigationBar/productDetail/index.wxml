@@ -1,0 +1,21 @@
+<template name="buttonTemplate">
+    <van-icon customClass="menu-icon" name="{{item.icon}}" size="32rpx"></van-icon>
+    <text class="menu-text">{{item.text}}</text>
+</template>
+<navigationBar back home bind:back="handlerGoback" bind:home="handlerShowMenu" homeIcon="menu" iconTheme="white" id="navigationBar" leftBackgroundColor="rgba(0,0,0,0.1)" showBgColor="{{showBgColor}}"></navigationBar>
+<van-overlay bind:click="handlerShowMenu" show="{{isShowMenu}}">
+    <view class="menu-wrapper">
+        <view class="menu-list">
+            <view class="menu-arrow"></view>
+            <block wx:for="{{menuList}}">
+                <button class="menu-item" openType="contact" wx:if="{{!workContact&&item.handle==='findHelp'}}">
+                    <template is="buttonTemplate" data="{{item:item}}"></template>
+                </button>
+                <button bind:tap="handleMenuItem" class="menu-item" data-method="{{item.handle}}" wx:else>
+                    <template is="buttonTemplate" data="{{item:item}}"></template>
+                </button>
+            </block>
+        </view>
+    </view>
+</van-overlay>
+<companyContact plugid="{{config.contact.plugid}}" show="{{showContact}}"></companyContact>

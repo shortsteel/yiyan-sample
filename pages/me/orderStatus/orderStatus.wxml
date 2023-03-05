@@ -1,0 +1,18 @@
+<view class="container">
+    <navigator class="item" url="plugin-private://wx34345ae5855f892d/pages/orderList/orderList?tabId=all">
+        <image class="icon" src="/icons/all_orders.svg"></image>
+        <view class="title">全部订单</view>
+    </navigator>
+    <navigator class="item" url="plugin-private://wx34345ae5855f892d/pages/orderList/orderList?tabId=pendingPay">
+        <image class="icon" src="/icons/wait_pay.svg"></image>
+        <view class="title">待付款</view>
+    </navigator>
+    <navigator class="item" url="plugin-private://wx34345ae5855f892d/pages/orderList/orderList?tabId=pendingRecevied">
+        <image class="icon" src="/icons/wait_receive.svg"></image>
+        <view class="title">待收货</view>
+    </navigator>
+    <navigator class="item" url="plugin-private://wx34345ae5855f892d/pages/orderList/orderList?tabId=afterSale">
+        <image class="icon" src="/icons/refund.svg"></image>
+        <view class="title">退款售后</view>
+    </navigator>
+</view>

@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "搜索",
+    "usingComponents": {
+        "van-loading": "./../../@vant/weapp/dist/loading/index",
+        "articleCard": "./../../components/articleCard/articleCard",
+        "van-icon": "./../../@vant/weapp/dist/icon/index"
+    }
+}

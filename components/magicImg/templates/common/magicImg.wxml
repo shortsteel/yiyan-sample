@@ -1,0 +1,42 @@
+<template name="rowImgItem">
+    <video controls enablePlayGesture autoplay="{{magicImgData.images[index].auto}}" class="rowImgItem {{magicImgData.spacing?'rowImgItemMargin':''}} {{magicImgData.images[index].image?'':'imgbg'}}" loop="{{magicImgData.images[index].loop}}" objectFit="cover" poster="{{magicImgData.images[index].image}}" showFullscreenBtn="{{false}}" showProgress="{{false}}" src="{{magicImgData.images[index].video}}" style="flex: {{magicImgData.flex?magicImgData.flex[index]:1}}" wx:if="{{magicImgData.images[index].type==='video'}}"></video>
+    <view class="rowImgItem {{magicImgData.spacing?'rowImgItemMargin':''}} {{magicImgData.images[index].image?'':'imgbg'}}" data-item="{{magicImgData.images[index]}}" style="background-image: url({{magicImgData.images[index].image}}); flex: {{magicImgData.flex?magicImgData.flex[index]:1}}" wx:else>
+        <extenNav bind:onCustomService="onCustomService" item="{{magicImgData.images[index]}}"></extenNav>
+    </view>
+</template>
+<template name="columnImgItem">
+    <view class="columnImgItem {{magicImgData.spacing?'columnImgItemMargin':''}} {{magicImgData.images[index].image?'':'imgbg'}}" data-item="{{magicImgData.images[index]}}" style="background-image: url({{magicImgData.images[index].image}})">
+        <extenNav bind:onCustomService="onCustomService" item="{{magicImgData.images[index]}}"></extenNav>
+    </view>
+</template>
+<view class="sectionTitle" wx:if="{{magicImgData.title}}">{{magicImgData.title}}</view>
+<view class="rowImgWrap" style="height: {{tplStyle==='default'||tplStyle==='vip_tpl_four'||tplStyle==='vip_tpl_five'||tplStyle==='vip_tpl_six'?magicImgData.height:690*magicImgData.height/750}}rpx" wx:if="{{magicImgData.defineType==='oneLine'}}">
+    <template is="rowImgItem" data="{{magicImgData:magicImgData,index:index,userInfo:userInfo,tabbarPages:tabbarPages}}" wx:for="{{magicImgData.eachNum}}" wx:key="item"></template>
+</view>
+<view class="rowImgWrap" style="height: {{tplStyle==='default'||tplStyle==='vip_tpl_four'||tplStyle==='vip_tpl_five'||tplStyle==='vip_tpl_six'?magicImgData.height:690*magicImgData.height/750}}rpx" wx:if="{{magicImgData.layout==='3-2'}}">
+    <template is="rowImgItem" data="{{magicImgData:magicImgData,index:0,userInfo:userInfo,tabbarPages:tabbarPages}}"></template>
+    <view class="rowImgItem columnImgWrap {{magicImgData.spacing?'rowImgItemMargin':''}}">
+        <template is="columnImgItem" data="{{magicImgData:magicImgData,index:1,userInfo:userInfo,tabbarPages:tabbarPages}}"></template>
+        <template is="columnImgItem" data="{{magicImgData:magicImgData,index:2,userInfo:userInfo,tabbarPages:tabbarPages}}"></template>
+    </view>
+</view>
+<view class="rowImgWrap" style="height: {{tplStyle==='default'||tplStyle==='vip_tpl_four'||tplStyle==='vip_tpl_five'||tplStyle==='vip_tpl_six'?magicImgData.height:690*magicImgData.height/750}}rpx" wx:if="{{magicImgData.layout==='3-3'}}">
+    <view class="rowImgItem columnImgWrap {{magicImgData.spacing?'rowImgItemMargin':''}}">
+        <template is="columnImgItem" data="{{magicImgData:magicImgData,index:0,userInfo:userInfo,tabbarPages:tabbarPages}}"></template>
+        <template is="columnImgItem" data="{{magicImgData:magicImgData,index:1,userInfo:userInfo,tabbarPages:tabbarPages}}"></template>
+    </view>
+    <template is="rowImgItem" data="{{magicImgData:magicImgData,index:2,userInfo:userInfo,tabbarPages:tabbarPages}}"></template>
+</view>
+<view class="rowImgWrap" style="height: {{tplStyle==='default'||tplStyle==='vip_tpl_four'||tplStyle==='vip_tpl_five'||tplStyle==='vip_tpl_six'?magicImgData.height:690*magicImgData.height/750}}rpx" wx:if="{{magicImgData.layout==='4-2'}}">
+    <view class="rowImgItem columnImgWrap {{magicImgData.spacing?'rowImgItemMargin':''}}">
+        <template is="columnImgItem" data="{{magicImgData:magicImgData,index:0,userInfo:userInfo,tabbarPages:tabbarPages}}"></template>
+        <template is="columnImgItem" data="{{magicImgData:magicImgData,index:1,userInfo:userInfo,tabbarPages:tabbarPages}}"></template>
+    </view>
+    <view class="rowImgItem columnImgWrap {{magicImgData.spacing?'rowImgItemMargin':''}}">
+        <template is="columnImgItem" data="{{magicImgData:magicImgData,index:2,userInfo:userInfo,tabbarPages:tabbarPages}}"></template>
+        <template is="columnImgItem" data="{{magicImgData:magicImgData,index:3,userInfo:userInfo,tabbarPages:tabbarPages}}"></template>
+    </view>
+</view>
+<form bind:submit="test" reportSubmit="true">
+    <button formType="submit" id="formId"></button>
+</form>

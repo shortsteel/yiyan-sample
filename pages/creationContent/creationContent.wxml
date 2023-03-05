@@ -1,0 +1,57 @@
+<van-loading class="loading" type="spinner" wx:if="{{isLoading}}"></van-loading>
+<view wx:if="{{!isLoading}}">
+    <view class="container" wx:if="{{user.edit_posts}}">
+        <van-field bind:change="titleChange" border="{{false}}" placeholder="请输入文章标题" value="{{title}}"></van-field>
+        <view class="bd">
+            <van-divider></van-divider>
+            <view class="selectorWrap">
+                <view class="text">选择状态</view>
+                <picker bindchange="bindStatusChange" mode="selector" range="{{status}}" rangeKey="name" value="{{currentStatusIndex}}">
+                    <view class="picker">{{status[currentStatusIndex].name}}</view>
+                </picker>
+            </view>
+            <van-divider></van-divider>
+            <view class="selectorWrap">
+                <view class="text">选择分类</view>
+                <picker bindchange="bindCategoryChange" mode="selector" range="{{categories}}" rangeKey="name" value="{{currrentCategoryIndex}}">
+                    <view class="picker">{{categories[currrentCategoryIndex].name}}</view>
+                </picker>
+            </view>
+            <van-divider></van-divider>
+        </view>
+        <view class="" hoverClass="none" hoverStopPropagation="false" wx:if="{{type==='gallery'}}">
+            <view class="up">
+                <van-uploader bind:after-read="afterRead" bind:delete="deleteFileList" fileList="{{fileList}}" imageFit="aspectFill" maxCount="{{100}}" multiple="{{true}}">
+                    <van-button customClass="up_btn" icon="plus" type="primary"></van-button>
+                </van-uploader>
+            </view>
+            <view class="editorContain">
+                <textarea bindinput="valueChange" class="editor" cursorSpacing="300" maxlength="{{-1}}" placeholder="请输入内容..." showConfirmBar="{{false}}" value="{{gallery.text}}"></textarea>
+            </view>
+            <view class="btnWrap">
+                <van-button round bind:tap="createArticle" color="#576b95" customClass="btn" type="info">点击发布 </van-button>
+            </view>
+        </view>
+        <view class="" wx:if="{{type==='image'}}">
+            <view class="galleryCard" wx:for="{{images}}">
+                <image bind:tap="uploadImg" class="galleryCardImage" data-index="{{index}}" lazyLoad="false" mode="aspectFit" src="{{item.raw?item.raw:'/icons/uploadIcon.svg'}}"></image>
+                <view bind:tap="openPopupText" class="galleryCardText" data-index="{{index}}" hoverClass="none" hoverStopPropagation="false">{{item.text}}</view>
+                <van-icon bind:tap="deleteGalleryCard" classPrefix="van-icon" customClass="delete" data-index="{{index}}" name="clear" size="40rpx" slot="icon"></van-icon>
+            </view>
+            <view class="btnWrap">
+                <van-icon bind:tap="AddGalleryCard" binderror="" bindload="" classPrefix="van-icon" customClass="addImg" name="add-o" size="60rpx" slot="icon"></van-icon>
+            </view>
+            <view class="btnWrap">
+                <van-button round bind:tap="createGalleryArticle" color="#576b95" customClass="btn" type="info"> 点击发布</van-button>
+            </view>
+            <van-popup round safeAreaInsetBottom bind:close="closePopupText" duration="0" show="{{show}}">
+                <view class="popupWrap" hoverClass="none" hoverStopPropagation="false">
+                    <textarea bindconfirm="imageValueChange" class="textarea" cursorSpacing="200" data-index="{{index}}" focus="{{focus}}" maxlength="{{-1}}" placeholder="请输入图片描述..." placeholderClass="placeholder" value="{{currentPopupText}}" wx:if="{{show}}"></textarea>
+                    <van-icon bind:tap="closePopupText" classPrefix="van-icon" customClass="textareaClose" data-index="{{index}}" name="close" size="50rpx" slot="icon"></van-icon>
+                </view>
+            </van-popup>
+        </view>
+    </view>
+    <view wx:if="{{!user.edit_posts}}">该功能暂未开发</view>
+</view>
+<van-dialog id="van-dialog"></van-dialog>

@@ -1,0 +1,164 @@
+<van-loading class="loading" type="spinner" wx:if="{{isLoading}}"></van-loading>
+<import src="./../../utils/wxParse/wxParse.wxml"></import>
+<view class="container {{post.format_content.mvh}} {{isIphoneX?'iphoneX':''}}" wx:if="{{!isLoading}}">
+    <view class="content-wrap {{!post.style?'bigImage':''}} {{post.category[0].pic_new?'content_new':''}}">
+        <view class="x_big" wx:if="{{!post.style}}">
+            <van-image customClass="banner" fit="widthFix" showLoading="{{false}}" src="{{post.pic2||post.thumbnail}}" width="750rpx"></van-image>
+            <view class="x_hd">
+                <view class="title">{{post.title}}</view>
+                <view class="t2">
+                    <view catch:tap="go" class="v list" data-url="/pages/articleList/articleList?category_id={{post.category[0].id}}">
+                        <van-icon classPrefix="van-icon" customClass="van-icon ilist" name="{{post.format==='video'?'video-o':'bars'}}" slot="icon"></van-icon>{{post.category[0].name}} </view>
+                    <view class="v time">
+                        <van-icon classPrefix="van-icon" customClass="van-icon itime" name="underway-o" slot="icon"></van-icon>{{post.time}} </view>
+                    <view class="v views">
+                        <van-icon classPrefix="van-icon" customClass="van-icon iviews" name="like-o" slot="icon"></van-icon>{{post.views}} </view>
+                </view>
+            </view>
+        </view>
+        <view class="i-content" wx:if="{{post.style}}">
+            <view class="x_hd">
+                <view class="title" wx:if="{{post.category[0].pic_new}}">{{post.title}}</view>
+                <view class="t2">
+                    <view catch:tap="go" class="v list" data-url="/pages/articleList/articleList?category_id={{post.category[0].id}}">
+                        <van-icon classPrefix="van-icon" customClass="van-icon ilist" name="{{post.format==='video'?'video-o':'bars'}}" slot="icon"></van-icon>{{post.category[0].name}} </view>
+                    <view class="line" wx:if="{{!post.category[0].pic_new}}"></view>
+                    <view class="v title2" wx:if="{{!post.category[0].pic_new}}">{{post.title}}</view>
+                    <view class="line" wx:if="{{!post.category[0].pic_new}}"></view>
+                    <view class="v time" wx:if="{{post.category[0].pic_new}}">
+                        <van-icon classPrefix="van-icon" customClass="van-icon itime" name="underway-o" slot="icon"></van-icon>{{post.time}} </view>
+                    <view class="v views">
+                        <van-icon classPrefix="van-icon" customClass="van-icon iviews" name="like-o" slot="icon"></van-icon>{{post.views}} </view>
+                </view>
+            </view>
+        </view>
+        <view class="peanut-wxParse content {{config.ilank.site_save?'content_save':''}}">
+            <view class="content_w" wx:if="{{!post.format}}">
+                <template is="wxParse" data="{{wxParseData:article_content.nodes}}"></template>
+            </view>
+            <formatContent author="{{post.author}}" content="{{post.format_content}}" type="{{post.format}}" wx:if="{{post.format&&post.format_content}}"></formatContent>
+            <view class="bt" wx:if="{{post.post_tag.length}}">
+                <view catch:tap="go" class="tag" data-url="/pages/articleList/articleList?tag={{item.slug}}" wx:for="{{post.post_tag}}" wx:key="id">#{{item.name}} </view>
+            </view>
+            <view class="author" wx:if="{{post.author}}">
+                <image class="avatar" src="{{post.author.avatar}}"></image>
+                <view class="right">
+                    <view class="nickname">{{post.author.name}}</view>
+                    <view class="desc">{{post.author.desc}}</view>
+                    <view bind:tap="go" class="all" data-url="/pages/articleList/articleList?author={{post.author.id}}">查看所有文章 → </view>
+                </view>
+            </view>
+        </view>
+        <view class="mark" wx:if="{{post.form}}">
+            <markForm bind:submit="submit" form="{{post.form.fields}}" onlyShow="{{post.form.per_user>0&&post.form.times>=post.form.per_user||post.form.max>0&&post.form.count>=post.form.max}}"></markForm>
+        </view>
+    </view>
+    <view class="ad-detail" wx:if="{{config.post_detail_ad.unit_id}}">
+        <ad adTheme="{{config.post_detail_ad.theme}}" adType="{{config.post_detail_ad.type}}" gridCount="{{config.post_detail_ad.grid_count}}" gridOpacity="0.8" unitId="{{config.post_detail_ad.unit_id}}"></ad>
+    </view>
+    <view class="x_author">
+        <view class="bd">
+            <view bindtap="previewImage2" customClass="l" data-src="{{ilank.list_pic}}" sessionFrom="{\"nickName\":\"{{userInfo.nickname}}\", \"avatarUrl\":\"{{userInfo.avatarurl}}\"}">
+                <van-image lazyLoad customClass="logo" fit="cover" height="90rpx" radius="10rpx" src="{{share_image}}" width="90rpx"></van-image>
+            </view>
+            <view class="r">
+                <van-button bindtap="previewImage2" customClass="l" sessionFrom="{\"nickName\":\"{{userInfo.nickname}}\", \"avatarUrl\":\"{{userInfo.avatarurl}}\"}">
+                    <view class="hd">{{config.ilank.site_name||'LIX PHOTO'}}</view>
+                    <view class="p">{{config.ilank.site_slogan||'简单而有力量，唯美又不失疯狂'}}</view>
+                </van-button>
+            </view>
+        </view>
+        <van-button hairline round bindtap="previewImage2" color="rgb(255 255 255 / 20%)" customClass="btn" size="small" type="primary">关注</van-button>
+    </view>
+    <view class="comments" wx:if="{{post.comments&&post.comments.length}}">
+        <view class="title">精彩评论</view>
+        <view class="item" wx:for="{{post.comments}}" wx:key="id">
+            <image class="avatar" src="{{item.author.avatar}}"></image>
+            <view class="right">
+                <view class="meta">
+                    <view class="header">
+                        <view class="sticky" wx:if="{{item.is_sticky}}">
+                            <van-icon classPrefix="sweet" color="#ff8140" name="sticky" size="30rpx" slot="icon"></van-icon>
+                            <text>置顶</text>
+                        </view>
+                        <view class="nickname">{{item.author.nickname||'热心网友'}}</view>
+                    </view>
+                </view>
+                <view class="options">
+                    <view class="time">{{WXS.formatTime(item.timestamp*1000)}}</view>
+                </view>
+                <view class="content">
+                    <text class="text" style="margin-right: 10rpx" wx:if="{{item.reply_to&&item.parent}}">@{{item.reply_to}}</text>
+                    <text decode selectable class="text">{{item.content}}</text>
+                    <view class="text approved" wx:if="{{!item.approved}}">您的评论正在审核中...</view>
+                </view>
+                <view class="replies" wx:if="{{item.children&&item.children.length}}">
+                    <view class="item" wx:for="{{item.children}}" wx:for-index="childIndex" wx:for-item="child" wx:key="id">
+                        <image class="avatar" src="{{child.author.avatar}}" wx:if="{{post.reply_type!=='admin_reply'}}"></image>
+                        <view class="right">
+                            <view class="meta">
+                                <view class="nickname {{post.reply_type==='admin_reply'?'admin':''}}">{{post.reply_type==='admin_reply'?'作者':child.author.nickname||'热心网友'}}</view>
+                            </view>
+                            <view class="options">
+                                <view class="time">{{WXS.formatTime(child.timestamp*1000)}}</view>
+                            </view>
+                            <view class="content">
+                                <text class="text" style="margin-right: 10rpx" wx:if="{{child.reply_to&&child.parent}}">@{{child.reply_to}}</text>
+                                <text decode selectable class="text">{{child.content}}</text>
+                                <view class="text approved" wx:if="{{!child.approved}}">您的评论正在审核中...</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="related {{post.category[0].pic_new?'related_new':''}}" wx:if="{{post.related&&post.related.length}}">
+        <view class="hd">
+            <view class="title">猜你喜欢</view>
+            <view class="like" wx:if="{{post.favs.length}}">
+                <view class="l">{{post.fav_count}}人喜欢</view>
+                <view class="r">
+                    <van-image lazyLoad round customClass="face" fit="cover" height="56rpx" showLoading="{{false}}" src="{{item.avatar}}" width="56rpx" wx:if="{{index>post.favs.length-9}}" wx:for="{{post.favs}}" wx:key="id"></van-image>
+                    <view class="mask" wx:if="{{post.favs.length>=8}}"></view>
+                </view>
+            </view>
+        </view>
+        <view class="sc">
+            <view catch:tap="goPage" class="item" data-item="{{item}}" wx:if="{{post.category[0].pic_new?index<8:index<9}}" wx:for="{{post.related}}" wx:key="id">
+                <articleCard article="{{item}}" type="{{post.category[0].pic_new?'new':'related'}}"></articleCard>
+            </view>
+        </view>
+    </view>
+    <van-goods-action>
+        <van-button round color="rgba(255,255,255,.08)" customClass="button-box comment-edit" openType="contact" sessionFrom="{\"nickName\":\"{{userInfo.nickname}}\", \"avatarUrl\":\"{{userInfo.avatarurl}}\"}" showMessageCard="{{true}}" style="width: 100%">
+            <view class="inner-button">
+                <van-icon color="" customClass="edit" name="phone"></van-icon>
+                <view class="edit_t">
+                    <text>咨</text>
+                    <text>询</text>
+                    <text>客</text>
+                    <text>服</text>
+                </view>
+            </view>
+        </van-button>
+        <van-button bind:click="bindGetUserInfo" customClass="button-box comment-btn" data-method="onComment">
+            <view class="inner-button">
+                <van-icon classPrefix="rich" color="rgba(255, 255, 255, .6)" name="comment" size="48rpx" slot="icon"></van-icon>
+                <text class="text" wx:if="{{post.comment_count!='0'}}">{{WXS.ellipsisValue(post.comment_count,4)}}</text>
+            </view>
+        </van-button>
+        <van-goods-action-icon bind:click="bindGetUserInfo" data-method="onFavArticle" wx:if="{{post.fav_status==='open'}}">
+            <van-icon classPrefix="rich" name="{{post.is_faved?'like':'like-o'}}" size="48rpx" slot="icon" style="color:{{post.is_faved?'#fff':'rgba(255, 255, 255, .6)'}}"></van-icon>
+        </van-goods-action-icon>
+        <van-goods-action-icon openType="share">
+            <van-icon classPrefix="rich" color="rgba(255, 255, 255, .6)" name="weixin" size="48rpx" slot="icon"></van-icon>
+        </van-goods-action-icon>
+        <van-goods-action-icon bind:click="bindGetUserInfo" data-method="showPoster">
+            <van-icon classPrefix="rich" color="rgba(255, 255, 255, .6)" name="moments" size="48rpx" slot="icon"></van-icon>
+        </van-goods-action-icon>
+    </van-goods-action>
+    <poster bind:closePoster="showPoster" poster="{{post}}" show="{{isShowPoster}}" user="{{current_user}}" wx:if="{{isShowPoster}}"></poster>
+</view>
+<service options="{{post.icons}}" sessionFrom="{\"nickName\":\"{{userInfo.nickname}}\", \"avatarUrl\":\"{{userInfo.avatarurl}}\", \"from\":\"articleDetail\"}" wx:if="{{post.icons.length}}"></service>
+<wxs module="WXS" src="../../utils/wxs/utils.wxs" />

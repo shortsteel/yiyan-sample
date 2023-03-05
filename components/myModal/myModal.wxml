@@ -1,0 +1,11 @@
+<view catchtouchmove="touchmove" class="modal" id="myModal" style="display: {{defineModal.isShowModal?'flex':'none'}}">
+    <view class="content">
+        <view class="content-header">{{defineModal.title}}</view>
+        <text class="content-body" decode="{{true}}" style="{{defineModal.bodyStyle}}">{{defineModal.body}}</text>
+        <view class="content-footer">
+            <view bindtap="onCancel" class="item-button content-footer-cancel" wx:if="{{defineModal.isShowCanel}}">{{defineModal.cancelText}}</view>
+            <button bindtap="onConfirm" class="item-button content-footer-confirm" openType="{{defineModal.buttonData.opentype}}" plain="{{true}}" sessionFrom="{\"nickName\":\"{{defineModal.userInfo.nickname}}\", \"avatarUrl\":\"{{defineModal.userInfo.avatarurl}}\"}" type="default" wx:if="{{defineModal.type==='button'}}">{{defineModal.confirmText}}</button>
+            <navigator appId="{{defineModal.navigateData.appId}}" bindtap="onConfirm" class="item-button content-footer-confirm" extraData="{{defineModal.navigateData.extraData}}" path="{{defineModal.navigateData.url}}" target="{{defineModal.navigateData.target}}" version="{{defineModal.navigateData.version}}" wx:if="{{defineModal.type==='navigate'}}">{{defineModal.confirmText}}</navigator>
+        </view>
+    </view>
+</view>

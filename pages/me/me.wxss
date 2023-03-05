@@ -1,0 +1,147 @@
+page {
+    height: 100%;
+}
+
+.top {
+    position: fixed;
+    top: -88rpx;
+    z-index: -1;
+}
+
+.aui-scrollView {
+    -webkit-box-flex: 1;
+    -webkit-overflow-scrolling: touch;
+    flex: 1;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.aui-scrollView .aui-head-bg .aui-mon-head {
+    align-items: center;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    margin: 190rpx auto 0;
+    padding-bottom: 50rpx;
+    position: relative;
+    width: 90%;
+    z-index: 2;
+}
+
+.aui-scrollView .aui-head-bg .aui-mon-head .avatar-btn {
+    background: transparent;
+    line-height: unset;
+    overflow: unset;
+    width: 140rpx;
+}
+
+.aui-scrollView .aui-head-bg .aui-mon-head .aui-mon-user {
+    background: #fff;
+    border: 4rpx solid #fff;
+    height: 140rpx;
+    margin: -60rpx auto;
+    width: 140rpx;
+}
+
+.aui-scrollView .aui-head-bg .aui-mon-head .aui-mon-title {
+    background: transparent;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 40rpx 0 30rpx;
+    padding-top: 30rpx;
+    text-align: center;
+}
+
+.aui-scrollView .aui-head-bg .aui-mon-head .aui-mon-area {
+    height: 30rpx;
+}
+
+.aui-scrollView .aui-head-bg .aui-mon-head .aui-mon-area .area-detail {
+    background: #fff;
+    border: 1rpx solid #d2d2d2;
+    border-radius: 40rpx;
+    color: #707070;
+    font-size: 12px;
+    padding: 8rpx 30rpx;
+}
+
+.aui-scrollView .aui-head-bg .aui-mon-head button:after {
+    border: none;
+}
+
+.aui-scrollView .order-status {
+    padding: 0 40rpx;
+}
+
+.aui-scrollView .logo {
+    bottom: 10rpx;
+    position: fixed;
+    width: 100%;
+}
+
+.aui-scrollView .aui-mon-list .aui-flex {
+    align-items: center;
+    border-bottom: 1rpx solid hsla(0,0%,100%,.2);
+    display: flex;
+    margin: 0 40rpx;
+    padding: 30rpx 0;
+}
+
+.aui-scrollView .aui-mon-list .contact {
+    background: transparent;
+    line-height: unset;
+    text-align: unset;
+}
+
+.aui-scrollView .aui-mon-list .aui-cou-img {
+    color: #fff;
+    font-size: 20px;
+    height: 50rpx;
+    margin: 0 15rpx;
+    opacity: .5;
+    width: 50rpx;
+}
+
+.aui-scrollView .aui-mon-list .aui-flex-box {
+    -webkit-box-flex: 1;
+    color: hsla(0,0%,100%,.8);
+    flex: 1;
+    font-size: 14px;
+    min-width: 0;
+}
+
+.aui-scrollView .aui-mon-list .aui-arrow {
+    color: hsla(0,0%,100%,.9);
+    padding-right: 24rpx;
+    position: relative;
+    text-align: right;
+}
+
+.aui-scrollView .aui-mon-list .aui-arrow:after {
+    border-color: #b1b1b1;
+    border-radius: 2rpx;
+    border-style: solid;
+    border-width: 2rpx 2rpx 0 0;
+    content: " ";
+    display: inline-block;
+    height: 16rpx;
+    margin-top: -10rpx;
+    position: relative;
+    position: absolute;
+    right: 4rpx;
+    top: -4rpx;
+    top: 50%;
+    transform: matrix(.71,.71,-.71,.71,0,0);
+    width: 16rpx;
+}
+
+@supports (bottom:constant(safe-area-inset-bottom)) or (bottom:env(safe-area-inset-bottom)) {
+    .top {
+        top: 0;
+    }
+
+    .aui-scrollView {
+        padding-top: 88rpx;
+    }
+}

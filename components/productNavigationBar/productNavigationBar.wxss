@@ -1,0 +1,55 @@
+.navigation-bar-wrap {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+.navigation-bar-wrap .bar-left-store {
+    align-items: center;
+    background: #fff;
+    border-radius: 32rpx;
+    color: #333;
+    display: flex;
+    font-size: 26rpx;
+    height: 100%;
+    justify-content: center;
+    margin-left: 20rpx;
+    padding: 0 20rpx;
+    width: 200rpx;
+}
+
+.navigation-bar-wrap .bar-left-store .store-name {
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    word-break: break-all;
+}
+
+.navigation-bar-wrap .bar-left-store .triangle {
+    height: 22rpx;
+    width: 22rpx;
+}
+
+.navigation-bar-wrap .bar-center {
+    align-items: center;
+    background: rgba(0,0,0,.2);
+    border: 1rpx solid hsla(0,0%,83%,.2);
+    border-radius: 32rpx;
+    color: hsla(0,0%,100%,.8);
+    display: flex;
+    font-size: 12px;
+    font-weight: 400;
+    height: 100%;
+    justify-content: center;
+    left: 20rpx;
+    padding: 2rpx 35rpx 0 30rpx;
+    position: absolute;
+}
+
+.navigation-bar-wrap .bar-center .bar-center-icon {
+    font-size: 40rpx;
+    margin-top: 14rpx;
+    opacity: .8;
+}

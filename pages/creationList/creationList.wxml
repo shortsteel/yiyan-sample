@@ -1,0 +1,13 @@
+<van-loading class="loading" type="spinner" wx:if="{{isLoading}}"></van-loading>
+<view wx:if="{{!isLoading}}">
+    <view class="container {{isIphoneX?'iphoneX':''}}" wx:if="{{user.edit_posts}}">
+        <view class="section">
+            <view bind:tap="goPage" class="articleItem" data-item="{{item}}" wx:for="{{posts}}">
+                <articleCard article="{{item}}" type="creation"></articleCard>
+            </view>
+        </view>
+        <view bind:tap="openActionSheet" class="btnWrap" hoverClass="none" hoverStopPropagation="false">创建文章</view>
+    </view>
+    <view wx:if="{{!user.edit_posts}}">该功能暂未开发</view>
+</view>
+<van-action-sheet actions="{{actions}}" bind:cancel="closeActionSheet" bind:close="closeActionSheet" bind:select="onSelect" cancelText="取消" closeOnClickOverlay="{{true}}" show="{{show}}" zIndex="{{10000}}"></van-action-sheet>

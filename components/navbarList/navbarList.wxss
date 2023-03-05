@@ -1,0 +1,243 @@
+.cartStyle,.default {
+    background-color: #fff;
+    box-shadow: 0rpx 0rpx 2rpx rgba(0,0,0,.16);
+    color: #999;
+    display: flex;
+    font-size: 14px;
+    height: 90rpx;
+    justify-content: space-around;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 100000;
+}
+
+.cartStyle .item,.default .item {
+    display: inline-block;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 123rpx;
+}
+
+.cartStyle .item.selected,.default .item.selected {
+    border-bottom: 4rpx solid #729153;
+    color: #000;
+}
+
+.cartStyle .badge,.default .badge {
+    align-items: center;
+    background: #f52d2d;
+    border-radius: 100%;
+    color: #fff;
+    display: flex;
+    font-size: 9px;
+    height: 25rpx;
+    justify-content: center;
+    position: absolute;
+    right: 13rpx;
+    top: 15rpx;
+    width: 25rpx;
+}
+
+.fixedStyle {
+    background-color: #fff;
+    box-shadow: 0rpx 0rpx 2rpx rgba(0,0,0,.16);
+    color: #999;
+    font-size: 14px;
+    height: 90rpx;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    white-space: nowrap;
+    z-index: 10000;
+}
+
+.fixedStyle .item {
+    display: inline-block;
+    height: 90rpx;
+    line-height: 115rpx;
+    margin: 0 auto;
+    text-align: center;
+    width: 110rpx;
+}
+
+.fixedStyle .item.selected {
+    border-bottom: 6rpx solid #729153;
+    color: #000;
+}
+
+.fixedStyle .item:first-child {
+    width: 90rpx;
+}
+
+.scroll-bg {
+    backdrop-filter: saturate(180%) blur(10rpx);
+    background: linear-gradient(180deg,#111,hsla(0,0%,7%,.6));
+    margin-top: -1rpx;
+}
+
+.scroll-tab {
+    color: hsla(0,0%,100%,.5);
+}
+
+.scroll-active {
+    color: #fff;
+}
+
+.scrollStyle {
+    backdrop-filter: saturate(180%) blur(10rpx);
+    background: linear-gradient(180deg,#111,hsla(0,0%,7%,.6));
+    color: hsla(0,0%,100%,.5);
+    font-size: 14px;
+    left: 0;
+    padding: 0 10rpx;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    white-space: nowrap;
+    z-index: 20;
+}
+
+.scrollStyle .item {
+    display: inline-block;
+    flex-shrink: 0;
+    height: 110rpx;
+    line-height: 110rpx;
+    padding: 0 20rpx;
+    position: relative;
+}
+
+.scrollStyle .selected:after {
+    background: linear-gradient(90deg,#ffee29,#ffd101);
+    border-radius: 12rpx;
+    bottom: 10rpx;
+    box-shadow: 0 4rpx 8rpx rgba(255,210,2,.28);
+    content: "";
+    display: block;
+    height: 10rpx;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,0);
+    width: 34rpx;
+}
+
+.scrollStyle .selected {
+    color: #fff;
+    font-weight: 500;
+}
+
+.multiStyle .arrow {
+    animation: arrow-down .5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes arrow-up {
+    0% {
+        transform: rotate(-180deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes arrow-up {
+    0% {
+        transform: rotate(-180deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes arrow-down {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-180deg);
+    }
+}
+
+@keyframes arrow-down {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-180deg);
+    }
+}
+
+.multiStyle .reverse-arrow {
+    animation: arrow-up .5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.multiStyle .multi-header {
+    border-bottom: 2rpx solid #eee;
+    height: auto;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.multiStyle .multi-header .multi-tabs {
+    width: calc(100% - 80rpx);
+    z-index: 999;
+}
+
+.multiStyle .multi-header .multi-nav>view {
+    background-color: #fff;
+}
+
+.multiStyle .multi-header .multi-popup {
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80rpx;
+    z-index: 1000;
+}
+
+.multiStyle .multi-header .multi-popup,.multiStyle .popup-box {
+    align-items: center;
+    display: flex;
+}
+
+.multiStyle .popup-box {
+    background-color: #fff;
+    box-shadow: 0 0 2rpx rgba(0,0,0,.16);
+    color: #333;
+    flex-wrap: wrap;
+    font-size: 12px;
+    justify-content: space-between;
+    padding: 20rpx 30rpx 0;
+    width: 100%;
+}
+
+.multiStyle .popup-box .item {
+    align-items: center;
+    border-radius: 40rpx;
+    display: flex;
+    height: 54rpx;
+    justify-content: center;
+    margin-bottom: 20rpx;
+    width: 120rpx;
+}
+
+.multiStyle .popup-box>.i {
+    width: 120rpx;
+}

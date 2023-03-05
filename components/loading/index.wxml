@@ -1,0 +1,3 @@
+<view style="padding-top:{{paddingTop}}rpx" wx:if="{{isLoading}}">
+    <image class="loadingIcon" src="/icons/loading.png"></image>
+</view>

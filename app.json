@@ -1,0 +1,63 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/home1/home",
+        "pages/category/category",
+        "pages/articleDetail/articleDetail",
+        "pages/articleDetail/comments",
+        "pages/articleList/articleList",
+        "pages/me/me",
+        "pages/me/favList/favList",
+        "pages/search/search",
+        "pages/webPages/webPages",
+        "pages/creationList/creationList",
+        "pages/creationContent/creationContent",
+        "pages/discovery/discovery",
+        "pages/featured/featured",
+        "pages/about/about",
+        "pages/modulePage/modulePage",
+        "pages/formPage/formPage",
+        "pages/errorPage/errorPage"
+    ],
+    "window": {
+        "navigationBarTitleText": "",
+        "navigationBarBackgroundColor": "#111111",
+        "navigationBarTextStyle": "white",
+        "backgroundColor": "#111111",
+        "backgroundTextStyle": "light",
+        "backgroundColorTop": "#111111",
+        "backgroundColorBottom": "#111111"
+    },
+    "tabBar": {
+        "color": "#8a8a8a",
+        "selectedColor": "#ffffff",
+        "backgroundColor": "#111111",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页",
+                "iconPath": "icons/default/home.png",
+                "selectedIconPath": "icons/default/home-selected.png"
+            },
+            {
+                "pagePath": "pages/discovery/discovery",
+                "text": "作品",
+                "iconPath": "icons/default/category_list.png",
+                "selectedIconPath": "icons/default/category_list-selected.png"
+            },
+            {
+                "pagePath": "pages/about/about",
+                "text": "品牌",
+                "iconPath": "icons/default/discovery.png",
+                "selectedIconPath": "icons/default/discovery-selected.png"
+            },
+            {
+                "pagePath": "pages/me/me",
+                "text": "我的",
+                "iconPath": "icons/default/me.png",
+                "selectedIconPath": "icons/default/me-selected.png"
+            }
+        ]
+    }
+}

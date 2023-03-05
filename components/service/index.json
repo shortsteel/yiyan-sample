@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "companyContact": "./../companyContact/companyContact",
+        "extenNav": "./../extenNav/extenNav",
+        "myModal": "./../myModal/myModal"
+    }
+}

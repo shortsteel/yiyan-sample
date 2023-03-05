@@ -1,0 +1,27 @@
+.top-radius {
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.bottom-radius {
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}
+
+.Wrapper {
+    overflow: hidden;
+}
+
+.Wrapper .title {
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 26rpx 60rpx;
+}
+
+.Wrapper .title .hd_ico {
+    height: 50rpx;
+    margin-right: 10rpx;
+    width: 50rpx;
+}

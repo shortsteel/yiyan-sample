@@ -1,0 +1,18 @@
+<van-loading class="loading" type="spinner" wx:if="{{isLoading}}"></van-loading>
+<view class="container" wx:if="{{!isLoading}}">
+    <view bind:tap="go" class="search_wrap" data-url="/pages/search/search">
+        <view class="search">
+            <van-icon classPrefix="rich" customClass="bar-center-icon" name="url" slot="icon"></van-icon>
+            <view class="text">搜索</view>
+        </view>
+    </view>
+    <view class="category_wrap">
+        <van-image customClass="hd_pic" fit="widthFix" showLoading="{{false}}" src="{{ilank.list_pic}}" width="750rpx" wx:if="{{ilank.list_pic}}"></van-image>
+        <view bind:tap="go" class="category" data-url="/pages/articleList/articleList?category_id={{item.id}}" wx:if="{{!item.list_hide}}" wx:for="{{categories}}" wx:key="key">
+            <van-image lazyLoad customClass="pic" fit="widthFix" src="{{item.thumbnail}}"></van-image>
+        </view>
+    </view>
+    <view class="peanut-logo logo">
+        <logo logoObj="{{logoObj}}"></logo>
+    </view>
+</view>

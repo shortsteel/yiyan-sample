@@ -1,0 +1,27 @@
+<view catchtouchmove="touchmove" class="newUserCoupon" wx:if="{{config.cdn_host}}">
+    <view class="couponContainer">
+        <image class="CouponBottom" src="{{config.cdn_host+'/shop/CouponBottom.png'}}"></image>
+        <view class="couponBox">
+            <view class="title">新用户专享</view>
+            <scroll-view scrollY class="couponScroll">
+                <view class="couponItem" data-status="{{item.status}}" style="background-image:url({{config.cdn_host+'/shop/newUserCoupon.svg'}}); {{coupons_newbie.length=='1'?'margin-top: 60rpx':''}}" wx:if="{{item.target_user_type==='2'}}" wx:for="{{coupons_newbie}}" wx:key="id">
+                    <view class="newCouponInfo">
+                        <view class="reduce">
+                            <text wx:if="{{item.type==1}}">{{globalData.CURRENCY[globalData.currency]}}</text>
+                            <text class="reduceCost">{{item.type==1?item.reduce_cost:(100-item.discount)/10}}</text>
+                            <text wx:if="{{item.type==2}}">折</text>
+                        </view>
+                        <view class="couponType">
+                            <view>新用户专享</view>
+                            <view>{{item.title}}</view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <image bind:tap="closeCoupon" class="close" lazyLoad="false" mode="widthFix" src="/icons/close.svg"></image>
+    </view>
+    <button bindgetuserinfo="receiveNewUserCoupon" class="btnWrap" data-coupons-newbie="{{coupons_newbie}}" openType="getUserInfo">
+        <image class="couponConfirm" src="/icons/newCouponBtn.svg"></image>
+    </button>
+</view>

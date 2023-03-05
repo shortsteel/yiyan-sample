@@ -1,0 +1,52 @@
+.container {
+    height: 100%;
+}
+
+.container .top-wrap {
+    border-radius: 6rpx;
+    box-shadow: 0 0 110rpx 0 rgba(0,0,0,.1);
+    height: 724rpx;
+    left: 50%;
+    margin-left: -325rpx;
+    margin-top: -362rpx;
+    position: absolute;
+    top: 50%;
+    width: 650rpx;
+    z-index: 999;
+}
+
+.container .section {
+    padding: 50rpx;
+}
+
+.container .section .articleItem {
+    margin-bottom: 50rpx;
+}
+
+.container .section .articleItem .card-img {
+    border-radius: 6rpx;
+}
+
+.container .section .noHint {
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 6rpx;
+    color: #333;
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    margin-top: 70rpx;
+    padding: 20rpx 0;
+}
+
+.home-guide {
+    position: fixed;
+    right: 40rpx;
+    top: 10rpx;
+    z-index: 10000;
+}
+
+.home-guide_img {
+    height: 68rpx;
+    width: 399rpx;
+}

@@ -1,0 +1,30 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "van-loading": "./../../@vant/weapp/dist/loading/index",
+        "categoryList": "./../../components/categoryList/index",
+        "magicImg": "./../../components/magicImg/magicImg",
+        "myModal": "./../../components/myModal/myModal",
+        "loading": "./../../components/loading/index",
+        "service": "./../../components/service/index",
+        "logo": "./../../components/logo/logo",
+        "myNavigator": "./../../components/myNavigator/myNavigator",
+        "searchBox": "./components/searchBox/searchBox",
+        "slide": "./components/slider/slider",
+        "textMessage": "./components/text/text",
+        "textList": "./components/textList/textList",
+        "nav": "./components/nav/nav",
+        "coupons": "./components/coupons/coupons",
+        "articleList": "./components/articleList/articleList",
+        "cube": "./components/cube/cube",
+        "lvList": "./components/lvList/lvList",
+        "gold-price": "./components/goldPrice/goldPrice",
+        "productNavigationBar": "./../../components/productNavigationBar/productNavigationBar",
+        "overlay": "./../../components/overlay/overlay",
+        "articleCard": "./../../components/articleCard/articleCard",
+        "customForm": "./components/customForm/customForm",
+        "companyContact": "./../../components/companyContact/companyContact",
+        "stickyCard": "./../../components/stickyCard/stickyCard"
+    },
+    "navigationStyle": "custom"
+}

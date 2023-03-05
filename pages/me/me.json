@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "我的",
+    "usingComponents": {
+        "logo": "./../../components/logo/logo",
+        "orderStatus": "./orderStatus/orderStatus",
+        "van-icon": "./../../@vant/weapp/dist/icon/index",
+        "van-image": "./../../@vant/weapp/dist/image/index"
+    },
+    "navigationStyle": "custom"
+}

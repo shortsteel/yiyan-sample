@@ -1,0 +1,44 @@
+<view class="container">
+    <navigator appId="{{item.appid}}" class="nav" hoverClass="none" openType="navigate" path="{{item.path}}" target="miniProgram" wx:if="{{item.type==='mini_program'}}">
+        <slot name="content">
+            <slot></slot>
+        </slot>
+    </navigator>
+    <navigator class="nav" hoverClass="none" url="/pages/webPages/webPages?src={{item.src}}" wx:elif="{{item.type==='web_view'}}">
+        <slot name="content">
+            <slot></slot>
+        </slot>
+    </navigator>
+    <view bindtap="call" class="call" data-phone="{{item.phone}}" wx:elif="{{item.type==='tel'}}">
+        <slot name="content">
+            <slot></slot>
+        </slot>
+    </view>
+    <view bindtap="top" wx:elif="{{item.type==='top'}}">
+        <slot name="content">
+            <slot></slot>
+        </slot>
+    </view>
+    <button catch:tap="{{config.contact&&config.contact.type!=='weapp'||item.tips?'onCustomService':''}}" class="btn" data-tips="{{item.tips}}" openType="{{config.contact&&config.contact.type!=='weapp'||item.tips?'':'contact'}}" sessionFrom="{\" nickName\":\"{{userInfo.nickname}}\", \"avatarUrl\":\"{{userInfo.avatarurl}}\", \"from\":\"home\"}" showMessageCard="{{true}}" wx:elif="{{item.type==='contact'}}">
+        <slot name="content">
+            <slot></slot>
+        </slot>
+    </button>
+    <view bindtap="runChannel" class="nav" data-feed-id="{{item.feed_id}}" data-finder="{{item.finder_username}}" data-type="{{item.channel_type}}" wx:elif="{{item.type==='channel'}}">
+        <slot name="content">
+            <slot></slot>
+        </slot>
+    </view>
+    <navigator class="nav" hoverClass="none" openType="switchTab" url="{{item.path}}" wx:elif="{{item.page_key==='home'||item.page_key==='category_list'||item.page_key==='discovery'||item.page_key==='featured'||item.page_key==='about'||item.page_key==='me'}}">
+        <slot name="content">
+            <slot></slot>
+        </slot>
+    </navigator>
+    <navigator class="nav" hoverClass="none" openType="{{tabbarPages[item.page_key]?'switchTab':'navigate'}}" url="{{item.path}}" wx:else>
+        <slot name="content">
+            <slot></slot>
+        </slot>
+    </navigator>
+</view>
+<myModal bindonCancel="onCancel" bindonConfirm="onConfirm" modal="{{contactModal}}"></myModal>
+<companyContact plugid="{{config.contact.plugid}}" show="{{customServiceModal}}" wx:if="{{config.contact&&config.contact.type==='work_weixin'}}"></companyContact>

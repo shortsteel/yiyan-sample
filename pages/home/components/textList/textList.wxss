@@ -1,0 +1,86 @@
+.textList {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.textList .title {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 26rpx 25rpx 0;
+    text-align: center;
+}
+
+.textList .list {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30rpx;
+}
+
+.textList .list .list-item {
+    align-items: center;
+    display: flex;
+    margin-bottom: 25rpx;
+}
+
+.textList .list .list-item .item-icon-img {
+    height: 20rpx;
+    width: 20rpx;
+}
+
+.textList .list .list-item .link-text {
+    color: #000;
+    flex: 1;
+    font-size: 12px;
+    margin-left: 10rpx;
+    padding: 6rpx 0;
+    word-break: break-all;
+}
+
+.textList .list .list-item:last-child {
+    margin-bottom: 0;
+}
+
+.textList .horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.textList .horizontal,.textList .horizontal .list-item {
+    align-items: center;
+    display: flex;
+}
+
+.textList .horizontal .list-item .item-icon-img {
+    height: 40rpx;
+    margin-right: 10rpx;
+    width: 40rpx;
+}
+
+.textList .horizontal .link-text {
+    align-items: center;
+    background: linear-gradient(90deg,hsla(0,0%,100%,.01),hsla(0,0%,100%,.05));
+    border-radius: 5rpx;
+    display: flex;
+    line-height: 60rpx;
+    margin: 0 11rpx 22rpx;
+    padding: 0 33rpx;
+    word-break: break-all;
+}
+
+.textList .horizontal .link-text:hover {
+    background: hsla(0,0%,100%,.1);
+    box-shadow: none;
+}
+
+.top-radius {
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.bottom-radius {
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}

@@ -1,0 +1,83 @@
+.container .title {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 26rpx 25rpx 0;
+    text-align: center;
+}
+
+.container .gold {
+    background: #fff;
+    padding: 0 25rpx;
+}
+
+.container .gold .gold-price {
+    color: #999;
+    display: flex;
+    padding: 32rpx 0;
+}
+
+.container .gold .gold-price .gold-price-item {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container .gold .gold-price .price-now {
+    border-right: 1rpx solid #e0e0e0;
+    font-size: 12px;
+    line-height: 33rpx;
+}
+
+.container .gold .gold-price .price-now .now-num {
+    color: #d0aa59;
+    display: flex;
+    font-size: 20px;
+    line-height: 56rpx;
+}
+
+.container .gold .gold-price .price-now .now-num .range {
+    align-items: center;
+    display: flex;
+    margin-left: 14rpx;
+}
+
+.container .gold .gold-price .price-now .now-num .range .range-img {
+    height: 22rpx;
+    width: 12rpx;
+}
+
+.container .gold .gold-price .price-now .now-num .range .range-num {
+    font-size: 20rpx;
+    line-height: 28rpx;
+    margin-left: 10rpx;
+}
+
+.container .gold .gold-price .price-now .now-num .range.range-up {
+    color: #ff3b3b;
+}
+
+.container .gold .gold-price .price-now .now-num .range.range-down {
+    color: #2fc170;
+}
+
+.container .gold .gold-price .price-today {
+    font-size: 20rpx;
+}
+
+.container .gold .gold-price .price-today .today-max {
+    margin-top: 20rpx;
+}
+
+.container .gold .gold-price .price-today .today-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .gold .gold-price .price-today .today-item .today-num {
+    color: #d0aa59;
+    font-size: 16px;
+    line-height: 45rpx;
+    margin-top: 10rpx;
+}

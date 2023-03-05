@@ -1,0 +1,62 @@
+.container {
+    border: 1rpx solid #eee;
+    border-radius: 10rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.container .left {
+    height: 120rpx;
+    position: relative;
+    width: 120rpx;
+}
+
+.container .left .icon {
+    height: 40rpx;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 40rpx;
+}
+
+.container .poster {
+    height: 100%;
+    width: 100%;
+}
+
+.container .content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10rpx 0 15rpx 20rpx;
+    width: 100%;
+}
+
+.container .content .title {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    font-size: 25rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.container .content .author {
+    color: #c9c9c9;
+    font-size: 20rpx;
+}
+
+.container .right {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 80rpx;
+}
+
+.container .right .time {
+    font-size: 20rpx;
+    text-align: center;
+}

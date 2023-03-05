@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="header">
+        <view class="searchWrapper">
+            <view class="inputWrapper">
+                <input bindconfirm="onSearch" bindinput="onInput" class="input" confirmType="search" focus="true" placeholder="请输入关键字" placeholderClass="input-placeholder" type="text" value="{{searchKey}}"></input>
+                <van-icon bindtap="onClearSearch" classPrefix="van-icon" customClass="van-icon clearIncon" name="clear" slot="icon" wx:if="{{searchKey}}"></van-icon>
+            </view>
+            <view bindtap="onSearch" class="searchBt">搜索</view>
+        </view>
+    </view>
+    <view class="main">
+        <view class="noSearch" wx:if="{{!posts.length&&!isSearch}}">
+            <view class="searchHintTitle">
+                <text>历史搜索</text>
+                <text bindtap="onClearHistory" class="clearHistory">清空历史</text>
+            </view>
+            <view class="noSearchKey" wx:if="{{!searchKeys||!searchKeys.length}}">暂无历史搜索</view>
+            <view class="searchKeys" wx:if="{{searchKeys&&searchKeys.length}}">
+                <view bindtap="onSearchKeyClick" class="searchKey" data-search="{{item}}" wx:for="{{searchKeys}}" wx:key="index">{{item}}</view>
+            </view>
+        </view>
+        <view class="section" wx:if="{{posts.length}}">
+            <view class="l">
+                <view bind:tap="go" class="articleItem" data-url="/pages/articleDetail/articleDetail?id={{item.id}}" wx:if="{{!item.category[0].list_hide}}" wx:for="{{posts}}">
+                    <articleCard article="{{item}}" type="fav" wx:if="{{index%2==0}}"></articleCard>
+                </view>
+            </view>
+            <view class="r">
+                <view bind:tap="go" class="articleItem" data-url="/pages/articleDetail/articleDetail?id={{item.id}}" wx:if="{{!item.category[0].list_hide}}" wx:for="{{posts}}">
+                    <articleCard article="{{item}}" type="fav" wx:if="{{index%2==1}}"></articleCard>
+                </view>
+            </view>
+        </view>
+        <view class="noHint" wx:if="{{!posts.length&&isSearch&&!isLoading}}">
+            <image class="icon" src="/icons/icon/noHint.svg"></image>
+            <view class="text">暂无相关文章</view>
+        </view>
+    </view>
+</view>

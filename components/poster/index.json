@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "painter": "./../painter/painter",
+        "van-popup": "./../../@vant/weapp/dist/popup/index",
+        "van-button": "./../../@vant/weapp/dist/button/index",
+        "van-icon": "./../../@vant/weapp/dist/icon/index"
+    }
+}

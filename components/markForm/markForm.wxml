@@ -1,0 +1,60 @@
+<view class="container">
+    <view class="form-content">
+        <view class="form-item" wx:for="{{showForm}}" wx:key="index">
+            <view class="form-item-left">
+                <view class="form-title">
+                    <text class="form-required" wx:if="{{!onlyShow&&item.required}}">*</text>
+                    <text>{{item.name||'-'}}</text>
+                </view>
+            </view>
+            <view class="form-item-right">
+                <view class="form-checkbox" wx:if="{{item.type==='checkbox'}}">
+                    <van-checkbox-group bind:change="onFormChange" class="checkbox-group-wrap" data-name="{{item.name}}" disabled="{{onlyShow}}" value="{{item.value}}">
+                        <van-checkbox checkedColor="{{themeColor.primaryColor}}" customClass="checkbox-wrap" name="{{option}}" shape="square" wx:for="{{item.options}}" wx:for-item="option" wx:key="index">
+                            <text>{{option||'-'}}</text>
+                        </van-checkbox>
+                    </van-checkbox-group>
+                </view>
+                <view class="form-radio" wx:elif="{{item.type==='radio'}}">
+                    <van-radio-group bind:change="onFormChange" class="radio-group-wrap" data-name="{{item.name}}" disabled="{{onlyShow}}" value="{{item.value}}">
+                        <van-radio checkedColor="{{themeColor.primaryColor}}" customClass="radio-wrap" name="{{option}}" wx:for="{{item.options}}" wx:for-item="option" wx:key="index">
+                            <text>{{option||'-'}}</text>
+                        </van-radio>
+                    </van-radio-group>
+                </view>
+                <view class="form-field" wx:elif="{{item.type==='date'||item.type==='time'||item.type==='select'}}">
+                    <picker bindchange="onFormChange" data-name="{{item.name}}" disabled="{{onlyShow}}" mode="{{item.type==='select'?'selector':item.type}}" range="{{item.options}}" value="{{item.value}}">
+                        <van-field border="" inputClass="input-wrap" placeholder="{{onlyShow?'':'请选择'+item.name}}" readonly="readonly" value="{{item.value}}"></van-field>
+                    </picker>
+                </view>
+                <view class="form-upload" wx:elif="{{item.type==='img'}}">
+                    <view bindtap="{{onlyShow?'previewImg':'onUpload'}}" class="type" data-index="{{index}}" data-name="{{item.name}}" data-type="{{item.type}}" data-url="{{item.value}}" style="border-color: {{item.isError?'#FF0000':'#C2C2C2'}};border:{{item.value?'':'1rpx solid #C2C2C2;'}}">
+                        <image class="{{item.value?'uploadSFZ':'defaultImg'}}" src="{{item.value?item.value:'/icons/uploadIcon.svg'}}"></image>
+                    </view>
+                </view>
+                <view class="form-field" wx:elif="{{item.type==='text'}}">
+                    <van-field autosize clearable bind:blur="onFormFocus" bind:change="onFormChange" bind:focus="onFormFocus" border="" data-name="{{item.name}}" inputClass="input-wrap" placeholder="{{onlyShow?'':item.label}}" readonly="{{onlyShow}}" type="textarea" value="{{item.value}}"></van-field>
+                </view>
+                <view class="form-field" wx:else>
+                    <van-field clearable bind:blur="onFormFocus" bind:change="onFormChange" bind:focus="onFormFocus" border="" data-name="{{item.name}}" inputClass="input-wrap" placeholder="{{onlyShow?'':item.label}}" readonly="{{onlyShow}}" type="{{markForm.changeType(item.type)}}" value="{{item.value}}"></van-field>
+                </view>
+            </view>
+        </view>
+        <button bindtap="submit" class="submitBtn" style="background-color:{{themeColor.primaryColor}}" wx:if="{{showSubmitBtn&&!onlyShow}}">提交</button>
+    </view>
+</view>
+<wxs module="markForm">
+var changeType = (function(type) {
+    if (type === 'id_number') {
+        type = 'idcard'
+    } else if (type === 'phone_number' || type === 'number') {
+        type = 'number'
+    } else if (type === 'text' || type === 'email') {
+        type = 'text'
+    };
+    return (type)
+});
+module.exports = ({
+    changeType: changeType,
+});
+</wxs>

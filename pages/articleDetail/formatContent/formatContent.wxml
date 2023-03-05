@@ -1,0 +1,33 @@
+<view class="format-content-wrap">
+    <view class="audio-wrap" wx:if="{{type==='audio'}}">
+        <view class="audio-content">
+            <myAudio author="{{author.name}}" poster="{{content.poster}}" src="{{content.audio}}" title="{{content.title}}"></myAudio>
+        </view>
+        <view class="video-text">
+            <text decode selectable>{{content.text}}</text>
+        </view>
+    </view>
+    <view class="video-wrap" wx:if="{{type==='video'}}">
+        <video autoplay enablePlayGesture class="video {{content.mvh}}" loop="{{content.loop}}" objectFit="cover" poster="{{content.poster}}" showProgress="{{content.mvh==='m3_4'?'':'false'}}" src="{{content.video}}"></video>
+        <view class="video-text" wx:if="{{content.text.length}}">
+            <text decode selectable>{{content.text}}</text>
+        </view>
+    </view>
+    <view class="gallery" wx:if="{{type==='gallery'}}">
+        <view class="gallery-text">
+            <text decode selectable>{{content.text}}</text>
+        </view>
+        <view class="gallery-images">
+            <image lazyLoad bind:tap="previewImage" class="{{content.gallery&&(content.gallery.length===1?'item-col-1':content.gallery.length===2||content.gallery.length===4?'item-col-2':'item-col-3')}}" data-index="{{index}}" data-url="{{item.raw}}" mode="widthFix" src="{{item.thumbnail}}" wx:for="{{content.gallery}}" wx:key="id"></image>
+        </view>
+    </view>
+    <view class="image-wrap" wx:if="{{type==='image'}}">
+        <view class="images" wx:for="{{content.images}}" wx:key="id">
+            <image lazyLoad bind:tap="previewImage" class="format-image" data-index="{{index}}" data-url="{{item.raw}}" mode="widthFix" src="{{item.image}}"></image>
+            <view class="images-text">
+                <text decode selectable>{{item.text}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<previewImgModal image="{{gifUrl}}" show="{{isShowPreView}}"></previewImgModal>

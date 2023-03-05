@@ -1,0 +1,19 @@
+<view class="card-bd">
+    <view class="card-img img-{{type}}">
+        <van-image lazyLoad fit="cover" height="530rpx" radius="20rpx" src="{{article.thumbnail}}" width="710rpx"></van-image>
+        <view class="views">
+            <van-icon classPrefix="van-icon" customClass="van-icon iviews" name="like" slot="icon"></van-icon>{{article.views}} </view>
+    </view>
+    <view class="bt">
+        <van-image lazyLoad round customClass="logo" fit="cover" height="80rpx" src="https://i.sunge.cn/f/rich/wx/logo.png" width="80rpx"></van-image>
+        <view class="r">
+            <view class="t1"> {{article.title}} </view>
+            <view class="t2">
+                <view catch:tap="go" class="v list" data-url="/pages/articleList/articleList?category_id={{article.category[0].id}}">
+                    <van-icon classPrefix="van-icon" customClass="van-icon ilist" name="{{article.format==='video'?'video':'notes'}}-o" slot="icon"></van-icon>{{article.category[0].name}} </view>
+                <view class="v time">
+                    <van-icon classPrefix="van-icon" customClass="van-icon itime" name="underway-o" slot="icon"></van-icon>{{article.time}} </view>
+            </view>
+        </view>
+    </view>
+</view>

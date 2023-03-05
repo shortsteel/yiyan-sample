@@ -1,0 +1,29 @@
+.poster-modal {
+    background-color: initial!important;
+}
+
+.poster-modal .big {
+    border-radius: 20rpx;
+}
+
+.poster-modal .poster-box {
+    border-radius: 10rpx;
+    box-shadow: 0rpx 3rpx 6rpx rgba(0,0,0,.16);
+}
+
+.poster-modal .poster-box .btn-box {
+    align-items: center;
+    background-color: initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10rpx;
+}
+
+.poster-modal .poster-box .close-icon {
+    height: 80rpx;
+    position: absolute;
+    right: 10rpx;
+    top: 10rpx;
+    width: 80rpx;
+}

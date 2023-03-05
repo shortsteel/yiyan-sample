@@ -1,0 +1,67 @@
+.card-bd,.card-img {
+    position: relative;
+}
+
+.card-img {
+    height: 530rpx;
+    margin: 0 auto;
+    width: 710rpx;
+}
+
+.card-img .views {
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    right: 50rpx;
+    top: 60rpx;
+}
+
+.card-img .van-icon {
+    font-size: 14px;
+    margin-right: 10rpx;
+    top: 6rpx;
+}
+
+.card-bd .bt {
+    background-color: hsla(0,0%,100%,.98);
+    border-radius: 20rpx;
+    bottom: -80rpx;
+    box-shadow: 0 10rpx 20rpx rgba(0,0,0,.03);
+    left: 60rpx;
+    padding: 30rpx 40rpx 20rpx;
+    position: absolute;
+    width: 630rpx;
+}
+
+.card-bd .logo {
+    box-shadow: 0 0 10rpx hsla(0,0%,100%,.6);
+    line-height: 1;
+    position: absolute;
+    top: -55rpx;
+}
+
+.card-bd .t1 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5rpx;
+}
+
+.card-bd .t2 {
+    display: flex;
+}
+
+.card-bd .t2 .v {
+    font-size: 12px;
+    margin-right: 28rpx;
+    opacity: .5;
+}
+
+.card-bd .t2 .van-icon {
+    font-size: 14px;
+    margin-right: 7rpx;
+    top: 6rpx;
+}
+
+.card-bd .views .ivews {
+    top: 5rpx;
+}

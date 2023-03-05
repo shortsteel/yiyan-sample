@@ -1,0 +1,112 @@
+.format-content-wrap .gallery-text,.format-content-wrap .images-text,.format-content-wrap .video-text {
+    font-size: 14px;
+    font-weight: 300;
+    text-align: justify;
+    word-break: break-all;
+}
+
+.format-content-wrap .gallery-text,.format-content-wrap .image-wrap {
+    margin: 0 40rpx;
+}
+
+.format-content-wrap .images-text {
+    font-weight: 400;
+    margin: 20rpx 0 0;
+}
+
+.format-content-wrap .video-text {
+    font-size: 14px;
+    font-weight: 300;
+    margin: 20rpx 40rpx;
+}
+
+.format-content-wrap .video-wrap video {
+    aspect-ratio: 16/9;
+    height: auto;
+    width: 100%;
+}
+
+.format-content-wrap .video-wrap .m3_4 {
+    height: calc(100vh - 96rpx - env(safe-area-inset-bottom));
+}
+
+.format-content-wrap .video-wrap .m1_1 {
+    aspect-ratio: 1/1;
+}
+
+.format-content-wrap .audio-wrap {
+    margin-bottom: 40rpx;
+}
+
+.format-content-wrap .audio-wrap .audio-content {
+    margin: 0 40rpx 40rpx;
+    position: relative;
+}
+
+.format-content-wrap .audio-wrap .audio-content .audio {
+    margin-bottom: 40rpx;
+    width: 100%;
+}
+
+.format-content-wrap .audio-wrap .audio-content .btn {
+    height: 150rpx;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 150rpx;
+}
+
+.format-content-wrap .gallery .gallery-images {
+    background: linear-gradient(0deg,transparent,rgba(0,0,0,.06),rgba(0,0,0,.06),transparent);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40rpx 0 50rpx;
+    padding: 0 40rpx;
+}
+
+.format-content-wrap .gallery .gallery-images .item-col-1 {
+    width: 100%;
+}
+
+.format-content-wrap .gallery .gallery-images .item-col-2 {
+    margin: 0 0 4%;
+    width: 48%;
+}
+
+.format-content-wrap .gallery .gallery-images .item-col-2.item-col-2:nth-child(2n-1) {
+    margin: 0 4% 4% 0;
+}
+
+.format-content-wrap .gallery .gallery-images .item-col-3 {
+    border-radius: 10rpx;
+    margin: 0 2% 2% 0;
+    width: 32%;
+}
+
+.format-content-wrap .gallery .gallery-images .item-col-3.item-col-3:nth-child(3n) {
+    margin: 0 0 2%;
+}
+
+.format-content-wrap .images {
+    margin-bottom: 40rpx;
+}
+
+.format-content-wrap .images .format-image {
+    border-radius: 20rpx;
+    display: block;
+    width: 100%;
+}
+
+@supports not (aspect-ratio:16/9) {
+    .format-content-wrap .video-wrap .video {
+        height: 421.875rpx;
+    }
+
+    .format-content-wrap .video-wrap .m1_1 {
+        height: 750rpx;
+    }
+
+    .format-content-wrap .video-wrap .m3_4 {
+        height: calc(100vh - 96rpx - env(safe-area-inset-bottom));
+    }
+}
